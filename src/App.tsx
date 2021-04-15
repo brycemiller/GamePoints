@@ -23,6 +23,7 @@ const collectableItems: CollectableItem.ICollectableItem[] = [
 const collectCollectable =
     (collectedCollectable: CollectableItem.ICollectableItem) => console.log(collectedCollectable);
 
+const gameName = "Points";
 const gameZoneClassName = "gameZone";
 const logoAltText = "Kahoot!";
 const logoURL = "kahoot-logo.svg";
@@ -30,7 +31,7 @@ const logoURL = "kahoot-logo.svg";
 function App() {
   return (
     <><GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
-        gameZoneClassName={gameZoneClassName}
+        gameName={gameName} gameZoneClassName={gameZoneClassName}
         logoAltText={logoAltText} logoURL={logoURL} /></>
   );
 }

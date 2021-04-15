@@ -45,3 +45,4 @@
 - git commit -m "T4: Added basic tests for testing game zone renders correctly"
 - Sort CSS
 - git commit -m "T4: Added CSS for game zone"
+- git commit -m "T4: Refactored game name (Points) to props"
