@@ -1,6 +1,7 @@
 import React from 'react';
+import './CollectableItem.css';
 
-class CollectableItem extends React.Component<GamePoints.ICollectableItemProps, GamePoints.ICollectableItemState> {
+export default class CollectableItem extends React.Component<GamePoints.ICollectableItemProps, GamePoints.ICollectableItemState> {
     constructor(props: GamePoints.ICollectableItemProps) {
         super(props);
         this.state = {
@@ -18,5 +19,3 @@ class CollectableItem extends React.Component<GamePoints.ICollectableItemProps, 
         );
     }
 }
-
-export default CollectableItem;

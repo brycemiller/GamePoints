@@ -20,3 +20,9 @@
 - Button fires onclick event with collectable item id
 - Function in app handles onclick
 - git commit -m "T3: Added collectable item component and console logging on click for basic proof of concept"
+
+14:30 Wake up baby, resume tonight
+- TODO: T3 - Add basic tests
+
+20:15 T3 - Adding basic test
+- git commit -m "T3: Added basic testing for collectable item component.  Updated log.  Made small aesthetic code adjustments"

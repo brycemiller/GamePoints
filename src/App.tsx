@@ -14,7 +14,7 @@ function App() {
   return (
     <><CollectableItem
         collectableItem={collectableItems[0]}
-        collectCollectable={collectCollectable}/></>
+        collectCollectable={collectCollectable} /></>
   );
 }
 
