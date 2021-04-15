@@ -1,5 +1,6 @@
 import React from 'react';
 import CollectableItem from '../CollectableItem/CollectableItem';
+import './GameZone.css';
 
 export default class GameZone extends
 React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
@@ -10,7 +11,6 @@ React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
             collectCollectable: props.collectCollectable,
             gameZoneClassName: props.gameZoneClassName,
             logoAltText: props.logoAltText,
-            logoClassName: props.logoClassName,
             logoURL: props.logoURL,
         }
     }
@@ -20,7 +20,7 @@ React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
             <div className={this.state.gameZoneClassName}>
                 <header>
                     <img src={process.env.PUBLIC_URL + '/' + this.state.logoURL}
-                        className={this.state.logoClassName} alt={this.state.logoAltText} />
+                        alt={this.state.logoAltText} />
                         Points.
                 </header>
                 <main>

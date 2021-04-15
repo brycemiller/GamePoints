@@ -4,7 +4,6 @@ declare namespace GameZone {
         collectCollectable: CollectableItem.CollectCollectable;
         gameZoneClassName: string;
         logoAltText: string;
-        logoClassName: string;
         logoURL: string;
     }
     
@@ -13,7 +12,6 @@ declare namespace GameZone {
         collectCollectable: CollectableItem.CollectCollectable;
         gameZoneClassName: string;
         logoAltText: string;
-        logoClassName: string;
         logoURL: string;
     }
 }

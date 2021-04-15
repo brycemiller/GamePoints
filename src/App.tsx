@@ -25,14 +25,13 @@ const collectCollectable =
 
 const gameZoneClassName = "gameZone";
 const logoAltText = "Kahoot!";
-const logoClassName = "logo";
 const logoURL = "kahoot-logo.svg";
 
 function App() {
   return (
     <><GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
         gameZoneClassName={gameZoneClassName}
-        logoAltText={logoAltText} logoClassName={logoClassName} logoURL={logoURL} /></>
+        logoAltText={logoAltText} logoURL={logoURL} /></>
   );
 }
 

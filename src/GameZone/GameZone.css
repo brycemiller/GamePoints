@@ -1,0 +1,14 @@
+button {
+    margin: 25px;
+}
+
+header {
+    color: rgb(70,23,143);
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+img {
+    margin: 0px 15px 0px 0px;
+    width: 6rem;
+}

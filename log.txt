@@ -43,3 +43,5 @@
 - git commit -m "T4: Moved all static strings from GameZone component to props"
 - Add tests
 - git commit -m "T4: Added basic tests for testing game zone renders correctly"
+- Sort CSS
+- git commit -m "T4: Added CSS for game zone"
