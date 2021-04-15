@@ -4,7 +4,7 @@ import CollectableItem from './CollectableItem';
 
 const collectableItemId = 'test-id';
 const collectableItemLabel = 'test-label';
-const collectableItem: GamePoints.ICollectableItem = {
+const collectableItem: CollectableItem.ICollectableItem = {
     id: collectableItemId,
     label: collectableItemLabel,
 }

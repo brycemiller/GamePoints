@@ -29,3 +29,7 @@
 
 20:45 T3 - Adding basic CSS
 - git commit -m "T3: Added basic CSS for sizing collectable item component."
+
+20:50 T3 - Move collectable item stuff to own folder
+- Collectable item stuff (component, test, types, etc) substantial enough to have own folder in folder structure
+- git commit -m "T3: Refactored collectable item-related code under own folder"

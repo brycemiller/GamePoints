@@ -1,7 +1,7 @@
 import React from 'react';
-import CollectableItem from './CollectableItem';
+import CollectableItem from './CollectableItem/CollectableItem';
 
-const collectableItems: GamePoints.ICollectableItem[] = [
+const collectableItems: CollectableItem.ICollectableItem[] = [
   {
     id: 'A',
     label: 'A',
@@ -9,7 +9,7 @@ const collectableItems: GamePoints.ICollectableItem[] = [
 ];
 
 function App() {
-  const collectCollectable = (collectedCollectable: GamePoints.ICollectableItem) => console.log(collectedCollectable);
+  const collectCollectable = (collectedCollectable: CollectableItem.ICollectableItem) => console.log(collectedCollectable);
 
   return (
     <><CollectableItem

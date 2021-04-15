@@ -1,8 +1,9 @@
 import React from 'react';
 import './CollectableItem.css';
 
-export default class CollectableItem extends React.Component<GamePoints.ICollectableItemProps, GamePoints.ICollectableItemState> {
-    constructor(props: GamePoints.ICollectableItemProps) {
+export default class CollectableItem extends
+React.Component<CollectableItem.ICollectableItemProps, CollectableItem.ICollectableItemState> {
+    constructor(props: CollectableItem.ICollectableItemProps) {
         super(props);
         this.state = {
             id:  props.collectableItem.id,

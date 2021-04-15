@@ -1,18 +1,18 @@
-declare namespace GamePoints {
+declare namespace CollectableItem {
     interface ICollectableItem {
         id: string;
         label: string;
     }
 
     interface ICollectableItemProps {
-        collectableItem: GamePoints.ICollectableItem;
-        collectCollectable: GamePoints.CollectCollectable;
+        collectableItem: CollectableItem.ICollectableItem;
+        collectCollectable: CollectableItem.CollectCollectable;
     }
     
     interface ICollectableItemState {
         id: string;
         label: string;
-        collectCollectable: GamePoints.CollectCollectable;
+        collectCollectable: CollectableItem.CollectCollectable;
     }
 
     type CollectCollectable = (collectedCollectable: Collectable) => void;
