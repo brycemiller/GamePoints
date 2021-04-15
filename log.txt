@@ -33,3 +33,7 @@
 20:50 T3 - Move collectable item stuff to own folder
 - Collectable item stuff (component, test, types, etc) substantial enough to have own folder in folder structure
 - git commit -m "T3: Refactored collectable item-related code under own folder"
+
+20:55 T4 - Make game-zone (section at left)
+- New component that displays the text "Kahoot! Points" at the top and renders buttons A-D underneath, in a scrollable section (CSS)
+- git commit -m "T4: Created basic GameZone component for left hand side with header and single collectable item."

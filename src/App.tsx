@@ -1,20 +1,9 @@
 import React from 'react';
-import CollectableItem from './CollectableItem/CollectableItem';
-
-const collectableItems: CollectableItem.ICollectableItem[] = [
-  {
-    id: 'A',
-    label: 'A',
-  },
-];
+import GameZone from './GameZone/GameZone';
 
 function App() {
-  const collectCollectable = (collectedCollectable: CollectableItem.ICollectableItem) => console.log(collectedCollectable);
-
   return (
-    <><CollectableItem
-        collectableItem={collectableItems[0]}
-        collectCollectable={collectCollectable} /></>
+    <><GameZone /></>
   );
 }
 
