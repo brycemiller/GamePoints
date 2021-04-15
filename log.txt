@@ -26,3 +26,6 @@
 
 20:15 T3 - Adding basic test
 - git commit -m "T3: Added basic testing for collectable item component.  Updated log.  Made small aesthetic code adjustments"
+
+20:45 T3 - Adding basic CSS
+- git commit -m "T3: Added basic CSS for sizing collectable item component."
