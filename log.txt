@@ -37,3 +37,4 @@
 20:55 T4 - Make game-zone (section at left)
 - New component that displays the text "Kahoot! Points" at the top and renders buttons A-D underneath, in a scrollable section (CSS)
 - git commit -m "T4: Created basic GameZone component for left hand side with header and single collectable item."
+- git commit -m "T2: Removed unneeded images from public and updated manifest"
