@@ -38,3 +38,5 @@
 - New component that displays the text "Kahoot! Points" at the top and renders buttons A-D underneath, in a scrollable section (CSS)
 - git commit -m "T4: Created basic GameZone component for left hand side with header and single collectable item."
 - git commit -m "T2: Removed unneeded images from public and updated manifest"
+- Loop over A-D and add props/state so that everything is sent in from App
+- git commit -m "T4: Render collectable items A-D in game zone.  Added types for game zone and sent in props from App"
