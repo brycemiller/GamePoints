@@ -8,13 +8,21 @@ React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
         this.state = {
             collectableItems:  props.collectableItems,
             collectCollectable: props.collectCollectable,
+            gameZoneClassName: props.gameZoneClassName,
+            logoAltText: props.logoAltText,
+            logoClassName: props.logoClassName,
+            logoURL: props.logoURL,
         }
     }
 
     render() {
         return (
-            <div className="GameZone">
-                <header><img src={process.env.PUBLIC_URL + '/kahoot-logo.svg'} className="logo" alt="Kahoot!" />Points.</header>
+            <div className={this.state.gameZoneClassName}>
+                <header>
+                    <img src={process.env.PUBLIC_URL + '/' + this.state.logoURL}
+                        className={this.state.logoClassName} alt={this.state.logoAltText} />
+                        Points.
+                </header>
                 <main>
                     {this.state.collectableItems.map(collectableItem => (
                         <CollectableItem key={collectableItem.id}
