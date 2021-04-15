@@ -11,3 +11,6 @@
 
 13:00 Write initial task list
 13:15 T2 - Strip down boiler plate
+- Remove CSS, test and logo
+- Modify App to display Hello, Kahoot!
+- git commit -m "T2: Stripped down boiler plate to create simple 'Hello, Kahoot\!'-app"
