@@ -11,3 +11,5 @@ T9 - Make new game button
 T10 - Write scoring function
 T11 - Write new game functionality
 T12 - Refactor types
+T13 - Make game component
+T14 - Get game settings/props from json file
