@@ -25,26 +25,27 @@ const collectableItems: CollectableItem.ICollectableItem[] = [
 
 const collectCollectable = () => { return; }
 
+const gameName = "Points";
 const gameZoneClassName = "gameZone";
 const logoAltText = "Kahoot!";
-const logoClassName = "logo";
 const logoURL = "kahoot-logo.svg";
 
 test('game zone renders', () => {
-    const gameZone = render (
+    render (
         <GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
-            gameZoneClassName={gameZoneClassName}
-            logoAltText={logoAltText} logoClassName={logoClassName} logoURL={logoURL} />
+            gameName={gameName} gameZoneClassName={gameZoneClassName}
+            logoAltText={logoAltText} logoURL={logoURL} />
     );
 
-    expect(gameZone.baseElement).toBeInTheDocument();
+    const gameZone = screen.getByText(gameName + '.');
+    expect(gameZone).toBeInTheDocument();
 });
 
 test('all collectable items rendered', async () => {
     render (
         <GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
-            gameZoneClassName={gameZoneClassName}
-            logoAltText={logoAltText} logoClassName={logoClassName} logoURL={logoURL} />
+            gameName={gameName} gameZoneClassName={gameZoneClassName}
+            logoAltText={logoAltText} logoURL={logoURL} />
     );
 
     collectableItems.map(collectableItem => {
@@ -63,8 +64,8 @@ test('one collectable item rendered', async () => {
 
     render (
         <GameZone collectableItems={oneCollectableItem} collectCollectable={collectCollectable}
-            gameZoneClassName={gameZoneClassName}
-            logoAltText={logoAltText} logoClassName={logoClassName} logoURL={logoURL} />
+            gameName={gameName} gameZoneClassName={gameZoneClassName}
+            logoAltText={logoAltText} logoURL={logoURL} />
     );
 
     oneCollectableItem.map(collectableItem => {
@@ -78,8 +79,8 @@ test('no collectable items rendered', async () => {
 
     render (
         <GameZone collectableItems={noCollectableItems} collectCollectable={collectCollectable}
-            gameZoneClassName={gameZoneClassName}
-            logoAltText={logoAltText} logoClassName={logoClassName} logoURL={logoURL} />
+            gameName={gameName} gameZoneClassName={gameZoneClassName}
+            logoAltText={logoAltText} logoURL={logoURL} />
     );
 
     collectableItems.map(collectableItem => {
