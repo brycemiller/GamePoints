@@ -13,3 +13,4 @@ T11 - Write new game functionality
 T12 - Refactor types
 T13 - Make game component
 T14 - Get game settings/props from json file
+T15 - Refactor strings in components to use lang prop
