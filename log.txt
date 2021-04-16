@@ -79,3 +79,8 @@
 
 20:00 T8 - make scoreboard total section
 - git commit -m "T8: Made scoreboard total component, with CSS and tests"
+
+20:20 T9 - make new game button
+- Added some more tasks to task list: game component, get settings from json file
+- git commit -m "Added tasks to task list: refactor types; make game component; get settings from json file."
+- git commit -m "small refactoring of CSS for CollectableItem - use new class instead of element button"
