@@ -5,14 +5,14 @@ declare namespace CollectableItem {
     }
 
     interface ICollectableItemProps {
-        collectableItem: CollectableItem.ICollectableItem;
-        collectCollectable: CollectableItem.CollectCollectable;
+        collectableItem: ICollectableItem;
+        collectCollectable: CollectCollectable;
     }
     
     interface ICollectableItemState {
         id: string;
         label: string;
-        collectCollectable: CollectableItem.CollectCollectable;
+        collectCollectable: CollectCollectable;
     }
 
     type CollectCollectable = (collectedCollectable: Collectable) => void;

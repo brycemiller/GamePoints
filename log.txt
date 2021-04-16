@@ -86,3 +86,13 @@
 - git commit -m "small refactoring of CSS for CollectableItem - use new class instead of element button"
 - Made new game button, based on collectable item.  Clicking writes action to console currently.
 - git commit -m "T9: Made new game button, with CSS and tests"
+
+20:55 T10 - Write scoring function
+- The meat of the project, and also the part that is probably the most different to what I'm used to in Svelte.  Here, we need to update the state across each sub-component, something we get out-of-the-box with Svelte.
+- Read about lifting state up in react, need to do some more thinking about this.
+
+21:30 T12 - Refactor types
+- Added task to task list
+- git commit -m "Added new task to task list - refactor strings in components to lang pattern, as appropriate"
+- Remove unneeded namespace prefixes in type declarations
+- git commit -m "Refactored type declarations to exclude unneeded namespace prefixes"

@@ -5,14 +5,14 @@ declare namespace Controls {
     }
 
     interface INewGameButtonProps {
-        newGameButton: Controls.INewGameButton;
-        resetGame: Controls.ResetGame;
+        newGameButton: INewGameButton;
+        resetGame: ResetGame;
     }
     
     interface INewGameButtonState {
         id: string;
         label: string;
-        resetGame: Controls.ResetGame;
+        resetGame: ResetGame;
     }
 
     type ResetGame = () => void;
