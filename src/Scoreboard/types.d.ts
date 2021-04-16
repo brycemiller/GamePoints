@@ -74,4 +74,32 @@ declare namespace Scoreboard {
         total: number;
         lang: IScoreboardTotalLang;
     }
+
+    interface IScoreboardLang {
+        scoreboardItemListLang: IScoreboardItemListLang,
+        scoreboardBonusTotalizerLang: IScoreboardBonusTotalizerLang,
+        scoreboardTotalLang: IScoreboardTotalLang,
+    }
+
+    interface IScoreboardProps {
+        scoreboardLang: IScoreboardLang,
+
+        scoreboardItems: IScoreboardItem[],
+        bonusTotal: number,
+        total: number,
+
+        newGameButton: Controls.INewGameButton,
+        resetGame: Controls.ResetGame,
+    }
+
+    interface IScoreboardState {
+        scoreboardLang: IScoreboardLang,
+
+        scoreboardItems: IScoreboardItem[],
+        bonusTotal: number,
+        total: number,
+
+        newGameButton: Controls.INewGameButton,
+        resetGame: Controls.ResetGame,
+    }
 }

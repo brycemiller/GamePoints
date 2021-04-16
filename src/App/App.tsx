@@ -1,9 +1,6 @@
 import React from 'react';
-import NewGameButton from '../Controls/NewGameButton';
 import GameZone from '../GameZone/GameZone';
-import ScoreboardBonusTotalizer from '../Scoreboard/ScoreboardBonusTotalizer';
-import ScoreboardItemList from '../Scoreboard/ScoreboardItemList';
-import ScoreboardTotal from '../Scoreboard/ScoreboardTotal';
+import Scoreboard from '../Scoreboard/Scoreboard';
 import './App.css';
 
 const collectableItems: CollectableItem.ICollectableItem[] = [
@@ -78,15 +75,26 @@ const newGameButton: Controls.INewGameButton = {
 }
 const resetGame = () => console.log('Resetting game');
 
+const scoreboardLang: Scoreboard.IScoreboardLang = {
+  scoreboardItemListLang: scoreboardItemListLang,
+  scoreboardBonusTotalizerLang: scoreboardBonusTotalizerLang,
+  scoreboardTotalLang: scoreboardTotalLang,
+}
+
 function App() {
   return (
-    <><GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
-        gameName={gameName} gameZoneClassName={gameZoneClassName}
-        logoAltText={logoAltText} logoURL={logoURL} />
-      <ScoreboardItemList scoreboardItems={scoreboardItems} lang={scoreboardItemListLang}/>
-      <ScoreboardBonusTotalizer bonusTotal={bonusTotal} lang={scoreboardBonusTotalizerLang} />
-      <ScoreboardTotal total={total} lang={scoreboardTotalLang} />
-      <NewGameButton newGameButton={newGameButton} resetGame={resetGame} /></>
+    <><GameZone collectableItems={collectableItems}
+        collectCollectable={collectCollectable}
+        gameName={gameName}
+        gameZoneClassName={gameZoneClassName}
+        logoAltText={logoAltText}
+        logoURL={logoURL} />
+      <Scoreboard scoreboardLang={scoreboardLang}
+        scoreboardItems={scoreboardItems}
+        bonusTotal={bonusTotal}
+        total={total}
+        newGameButton={newGameButton}
+        resetGame={resetGame} /></>
   );
 }
 

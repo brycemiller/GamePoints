@@ -96,3 +96,10 @@
 - git commit -m "Added new task to task list - refactor strings in components to lang pattern, as appropriate"
 - Remove unneeded namespace prefixes in type declarations
 - git commit -m "Refactored type declarations to exclude unneeded namespace prefixes"
+
+21:40 T13 - Make game component
+- Encapsulate everything in a game component, loaded from the App function
+- git commit -m "T13: Made scoreboard component with tests"
+
+
+
