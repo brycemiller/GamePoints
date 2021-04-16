@@ -73,18 +73,3 @@ test('one collectable item rendered', () => {
         expect(collectableItemButton).toBeInTheDocument();
     });
 });
-
-test('no collectable items rendered', () => {
-    const noCollectableItems: CollectableItem.ICollectableItem[] = [];
-
-    render (
-        <GameZone collectableItems={noCollectableItems} collectCollectable={collectCollectable}
-            gameName={gameName} gameZoneClassName={gameZoneClassName}
-            logoAltText={logoAltText} logoURL={logoURL} />
-    );
-
-    collectableItems.map(collectableItem => {
-        const collectableItemButton = screen.queryByText(collectableItem.label);
-        expect(collectableItemButton).toBeNull();
-    });
-});

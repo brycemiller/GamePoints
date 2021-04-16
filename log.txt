@@ -66,4 +66,5 @@
 - Refactoring GameZone tests, as I forgot to update them when I removed logoClassName from props
 - git commit -m "T4: Refactored game zone tests to align with current props"
 - git commit -m "T4: Removing unneeded async from game zone tests"
+- git commit -m "T4: Removing meaningless game zone test"
 - Scoreboard item list tests, similar to gamezone tests for lower section, also ensure that empty or negative quantities do not appear in list
