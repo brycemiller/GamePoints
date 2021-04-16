@@ -1,6 +1,5 @@
 import React from 'react';
-import GameZone from '../GameZone/GameZone';
-import Scoreboard from '../Scoreboard/Scoreboard';
+import Game from '../Game/Game';
 import './App.css';
 
 const collectableItems: CollectableItem.ICollectableItem[] = [
@@ -83,13 +82,13 @@ const scoreboardLang: Scoreboard.IScoreboardLang = {
 
 function App() {
   return (
-    <><GameZone collectableItems={collectableItems}
+    <><Game collectableItems={collectableItems}
         collectCollectable={collectCollectable}
         gameName={gameName}
         gameZoneClassName={gameZoneClassName}
         logoAltText={logoAltText}
-        logoURL={logoURL} />
-      <Scoreboard scoreboardLang={scoreboardLang}
+        logoURL={logoURL}
+        scoreboardLang={scoreboardLang}
         scoreboardItems={scoreboardItems}
         bonusTotal={bonusTotal}
         total={total}
