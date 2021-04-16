@@ -58,4 +58,8 @@
 
 12:40 Refactor CSS + App
 - Move app to own folder, and move common CSS there
-- git commmit -m "Moved App to own folder and refactored common CSS to App.css"
+- git commit -m "Moved App to own folder and refactored common CSS to App.css"
+
+12:50 T6 - make scoreboard list
+- Like lower section of gamezone, take in array of scoreboard items and display
+- git commit -m "T6: Made scoreboard item list with CSS.  Moved some CSS to App.css.  Tests remaining."

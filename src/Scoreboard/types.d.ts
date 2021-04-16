@@ -16,4 +16,24 @@ declare namespace Scoreboard {
         quantity: number;
         score: number;
     }
+
+    interface IScoreboardItemListLang {
+        item: string;
+        quantity: string;
+        score: string;
+    }
+
+    interface IScoreboardItemList {
+        lang: Scoreboard.IScoreboardItemListLang;
+    }
+    
+    interface IScoreboardItemListProps {
+        scoreboardItems: Scoreboard.IScoreboardItem[];
+        lang: Scoreboard.IScoreboardItemListLang;
+    }
+    
+    interface IScoreboardItemListState {
+        scoreboardItems: Scoreboard.IScoreboardItem[];
+        lang: Scoreboard.IScoreboardItemListLang;
+    }
 }

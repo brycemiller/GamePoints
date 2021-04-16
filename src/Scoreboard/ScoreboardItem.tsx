@@ -1,5 +1,5 @@
 import React from 'react';
-import './ScoreboardItem.css';
+import './Scoreboard.css';
 
 export default class ScoreboardItem extends
 React.Component<Scoreboard.IScoreboardItemProps, Scoreboard.IScoreboardItemState> {
