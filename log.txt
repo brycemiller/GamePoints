@@ -73,3 +73,9 @@
 14:05 T7 - make scoreboard bonus section
 - Simply display text and number, like scoreboard item, but even simpler
 - git commit -m "T7: Made scoreboard bonus totalizer section, with CSS and tests"
+
+14:30 Wake up baby, resume tonight
+- Scoreboard totalizer, new game button, then put it altogether in a game component
+
+20:00 T8 - make scoreboard total section
+- git commit -m "T8: Made scoreboard total component, with CSS and tests"

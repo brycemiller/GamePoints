@@ -2,6 +2,7 @@ import React from 'react';
 import GameZone from '../GameZone/GameZone';
 import ScoreboardBonusTotalizer from '../Scoreboard/ScoreboardBonusTotalizer';
 import ScoreboardItemList from '../Scoreboard/ScoreboardItemList';
+import ScoreboardTotal from '../Scoreboard/ScoreboardTotal';
 import './App.css';
 
 const collectableItems: CollectableItem.ICollectableItem[] = [
@@ -65,13 +66,19 @@ const scoreboardBonusTotalizerLang: Scoreboard.IScoreboardBonusTotalizerLang = {
   bonus: "Bonus"
 }
 
+const total = 140;
+const scoreboardTotalLang: Scoreboard.IScoreboardTotalLang = {
+  total: "Total"
+}
+
 function App() {
   return (
     <><GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
         gameName={gameName} gameZoneClassName={gameZoneClassName}
         logoAltText={logoAltText} logoURL={logoURL} />
       <ScoreboardItemList scoreboardItems={scoreboardItems} lang={scoreboardItemListLang}/>
-      <ScoreboardBonusTotalizer bonusTotal={bonusTotal} lang={scoreboardBonusTotalizerLang} /></>
+      <ScoreboardBonusTotalizer bonusTotal={bonusTotal} lang={scoreboardBonusTotalizerLang} />
+      <ScoreboardTotal total={total} lang={scoreboardTotalLang} /></>
   );
 }
 

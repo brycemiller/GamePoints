@@ -55,4 +55,23 @@ declare namespace Scoreboard {
         bonusTotal: number;
         lang: Scoreboard.IScoreboardBonusTotalizerLang;
     }
+
+    interface IScoreboardTotalLang {
+        total: string;
+    }
+
+    interface IScoreboardTotal {
+        total: number;
+        lang: Scoreboard.IScoreboardTotalLang;
+    }
+
+    interface IScoreboardTotalProps {
+        total: number;
+        lang: Scoreboard.IScoreboardTotalLang;
+    }
+
+    interface IScoreboardTotalState {
+        total: number;
+        lang: Scoreboard.IScoreboardTotalLang;
+    }
 }
