@@ -55,3 +55,5 @@
 - Scoreboard item should take an ICollectableItem, a quantity, and a score
 - Tabular data, so use tr, td for accessibility
 - git commit -m "T5: Made first version of scoreboard item, with tests and basic css"
+
+12:40 T5 - refactor CSS a bit, update task list
