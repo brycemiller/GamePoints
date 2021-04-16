@@ -1,5 +1,6 @@
 import React from 'react';
 import GameZone from './GameZone/GameZone';
+import ScoreboardItem from './Scoreboard/ScoreboardItem';
 
 const collectableItems: CollectableItem.ICollectableItem[] = [
   {
@@ -32,7 +33,10 @@ function App() {
   return (
     <><GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
         gameName={gameName} gameZoneClassName={gameZoneClassName}
-        logoAltText={logoAltText} logoURL={logoURL} /></>
+        logoAltText={logoAltText} logoURL={logoURL} />
+      <table><tbody>
+        <ScoreboardItem collectableItem={collectableItems[1]} quantity={2} score={30}/>
+      </tbody></table></>
   );
 }
 
