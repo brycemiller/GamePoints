@@ -56,4 +56,6 @@
 - Tabular data, so use tr, td for accessibility
 - git commit -m "T5: Made first version of scoreboard item, with tests and basic css"
 
-12:40 T5 - refactor CSS a bit, update task list
+12:40 Refactor CSS + App
+- Move app to own folder, and move common CSS there
+- git commmit -m "Moved App to own folder and refactored common CSS to App.css"

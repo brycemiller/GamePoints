@@ -1,6 +1,7 @@
 import React from 'react';
-import GameZone from './GameZone/GameZone';
-import ScoreboardItem from './Scoreboard/ScoreboardItem';
+import GameZone from '../GameZone/GameZone';
+import ScoreboardItem from '../Scoreboard/ScoreboardItem';
+import './App.css';
 
 const collectableItems: CollectableItem.ICollectableItem[] = [
   {
