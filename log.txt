@@ -101,6 +101,6 @@
 - Encapsulate everything in a game component, loaded from the App function
 - git commit -m "T13: Made scoreboard component with tests"
 - git commit -m "T13: Made game component encapsulating gamezone and scoreboard, with render tests"
-
+- git commit -m "Added refactoring tasks to task list"
 
 
