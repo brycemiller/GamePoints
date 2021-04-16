@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import GameZone from './GameZone';
 
 const collectableItemId = 'test-id-';
@@ -41,7 +41,7 @@ test('game zone renders', () => {
     expect(gameZone).toBeInTheDocument();
 });
 
-test('all collectable items rendered', async () => {
+test('all collectable items rendered', () => {
     render (
         <GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
             gameName={gameName} gameZoneClassName={gameZoneClassName}
@@ -54,7 +54,7 @@ test('all collectable items rendered', async () => {
     });
 });
 
-test('one collectable item rendered', async () => {
+test('one collectable item rendered', () => {
     const oneCollectableItem: CollectableItem.ICollectableItem[] = [
         {
             id: collectableItemId+'Z',
@@ -74,7 +74,7 @@ test('one collectable item rendered', async () => {
     });
 });
 
-test('no collectable items rendered', async () => {
+test('no collectable items rendered', () => {
     const noCollectableItems: CollectableItem.ICollectableItem[] = [];
 
     render (
