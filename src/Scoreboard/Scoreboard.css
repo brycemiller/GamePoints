@@ -3,6 +3,6 @@ table {
     text-align: center;
 }
 
-td {
-    font-size: 35px;
+.scoreboardBonusTotalizer > span {
+    margin-left: 15px;
 }

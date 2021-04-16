@@ -26,7 +26,7 @@ declare namespace Scoreboard {
     interface IScoreboardItemList {
         lang: Scoreboard.IScoreboardItemListLang;
     }
-    
+
     interface IScoreboardItemListProps {
         scoreboardItems: Scoreboard.IScoreboardItem[];
         lang: Scoreboard.IScoreboardItemListLang;
@@ -35,5 +35,24 @@ declare namespace Scoreboard {
     interface IScoreboardItemListState {
         scoreboardItems: Scoreboard.IScoreboardItem[];
         lang: Scoreboard.IScoreboardItemListLang;
+    }
+
+    interface IScoreboardBonusTotalizerLang {
+        bonus: string;
+    }
+
+    interface IScoreboardBonusTotalizer {
+        bonusTotal: number;
+        lang: Scoreboard.IScoreboardBonusTotalizerLang;
+    }
+
+    interface IScoreboardBonusTotalizerProps {
+        bonusTotal: number;
+        lang: Scoreboard.IScoreboardBonusTotalizerLang;
+    }
+
+    interface IScoreboardBonusTotalizerState {
+        bonusTotal: number;
+        lang: Scoreboard.IScoreboardBonusTotalizerLang;
     }
 }

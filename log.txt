@@ -69,3 +69,7 @@
 - git commit -m "T4: Removing meaningless game zone test"
 - Scoreboard item list tests, similar to gamezone tests for lower section, also ensure that empty or negative quantities do not appear in list
 - git commit -m "T6: Added tests for scoreboard item list"
+
+14:05 T7 - make scoreboard bonus section
+- Simply display text and number, like scoreboard item, but even simpler
+- git commit -m "T7: Made scoreboard bonus totalizer section, with CSS and tests"
