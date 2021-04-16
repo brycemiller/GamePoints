@@ -10,3 +10,4 @@ T8 - Make scoreboard total
 T9 - Make new game button
 T10 - Write scoring function
 T11 - Write new game functionality
+T12 - Refactor types
