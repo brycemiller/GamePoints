@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import CollectableItem from './CollectableItem';
 
 const collectableItemId = 'test-id';
@@ -21,7 +21,7 @@ test('button renders', () => {
     expect(collectableItemButton).toBeInTheDocument();
 });
 
-test('button click event is handled using custom function', async () => {
+test('button click event is handled using custom function', () => {
     render (
         <CollectableItem collectableItem={collectableItem} collectCollectable={collectCollectable} />
     );

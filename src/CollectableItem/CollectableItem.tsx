@@ -14,7 +14,7 @@ React.Component<CollectableItem.ICollectableItemProps, CollectableItem.ICollecta
 
     render() {
         return (
-            <button onClick={() => {this.state.collectCollectable(this.state.id);}}>
+            <button onClick={() => this.state.collectCollectable(this.state.id)}>
                 {this.state.label}
             </button>
         );
