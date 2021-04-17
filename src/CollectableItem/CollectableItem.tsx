@@ -8,13 +8,14 @@ React.Component<CollectableItem.ICollectableItemProps, CollectableItem.ICollecta
         this.state = {
             id:  props.collectableItem.id,
             label: props.collectableItem.label,
-            collectCollectable: props.collectCollectable,
+            onCollectItem: props.onCollectItem,
         }
     }
 
     render() {
         return (
-            <button className="collectableItem" onClick={() => this.state.collectCollectable(this.state.id)}>
+            <button className="collectableItem"
+                onClick={() => this.state.onCollectItem(this.props.collectableItem)}>
                 {this.state.label}
             </button>
         );

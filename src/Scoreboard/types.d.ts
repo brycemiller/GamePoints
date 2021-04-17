@@ -13,8 +13,6 @@ declare namespace Scoreboard {
     
     interface IScoreboardItemState {
         collectableItem: CollectableItem.ICollectableItem;
-        quantity: number;
-        score: number;
     }
 
     interface IScoreboardItemListLang {
@@ -33,7 +31,6 @@ declare namespace Scoreboard {
     }
     
     interface IScoreboardItemListState {
-        scoreboardItems: Scoreboard.IScoreboardItem[];
         lang: IScoreboardItemListLang;
     }
 
@@ -52,7 +49,6 @@ declare namespace Scoreboard {
     }
 
     interface IScoreboardBonusTotalizerState {
-        bonusTotal: number;
         lang: IScoreboardBonusTotalizerLang;
     }
 
@@ -71,7 +67,6 @@ declare namespace Scoreboard {
     }
 
     interface IScoreboardTotalState {
-        total: number;
         lang: IScoreboardTotalLang;
     }
 
@@ -83,22 +78,15 @@ declare namespace Scoreboard {
 
     interface IScoreboardProps {
         scoreboardLang: IScoreboardLang,
-
         scoreboardItems: IScoreboardItem[],
         bonusTotal: number,
         total: number,
-
         newGameButton: Controls.INewGameButton,
         resetGame: Controls.ResetGame,
     }
 
     interface IScoreboardState {
         scoreboardLang: IScoreboardLang,
-
-        scoreboardItems: IScoreboardItem[],
-        bonusTotal: number,
-        total: number,
-
         newGameButton: Controls.INewGameButton,
         resetGame: Controls.ResetGame,
     }

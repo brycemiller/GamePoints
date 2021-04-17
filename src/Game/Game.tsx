@@ -9,7 +9,6 @@ React.Component<Game.IGameProps, Game.IGameState> {
         super(props);
         this.state = {
             collectableItems: props.collectableItems,
-            collectCollectable: props.collectCollectable,
 
             gameName: props.gameName,
             gameZoneClassName: props.gameZoneClassName,
@@ -19,18 +18,50 @@ React.Component<Game.IGameProps, Game.IGameState> {
             scoreboardLang: props.scoreboardLang,
 
             scoreboardItems: props.scoreboardItems,
-            bonusTotal: props.bonusTotal,
-            total: props.total,
+            bonusTotal: 0,
+            total: 0,
             
             newGameButton: props.newGameButton,
             resetGame: props.resetGame,
         }
     }
 
+    onCollectItem = (collectedItem: CollectableItem.ICollectableItem) => {
+        this.updateScoreboardItems(collectedItem);
+        this.updateTotal(collectedItem);
+        this.updateBonusTotal(collectedItem);
+    }
+
+    updateTotal(collectedItem: CollectableItem.ICollectableItem) {
+        this.setState({total: this.state.total+10});
+    }
+
+    updateBonusTotal(collectedItem: CollectableItem.ICollectableItem) {
+        this.setState({bonusTotal: this.state.total % 50 === 0 ?
+            this.state.bonusTotal+50 :
+            this.state.bonusTotal});
+    }
+
+    updateScoreboardItems(collectedItem: CollectableItem.ICollectableItem) {
+        // Get correct item
+        const scoreboardItem = this.state.scoreboardItems
+            .filter(scoreboardItem => scoreboardItem.collectableItem.id === collectedItem.id)
+            .shift();
+
+        // Only legitimate collected items should be counted
+        if (scoreboardItem !== undefined) {
+            scoreboardItem.quantity += 1;
+            scoreboardItem.score += 10;
+        }
+
+        // Propagate changes
+        this.setState({scoreboardItems: this.state.scoreboardItems});
+    }
+
     render() {
         return (
             <><GameZone collectableItems={this.state.collectableItems}
-                collectCollectable={this.state.collectCollectable}
+                onCollectItem={this.onCollectItem}
                 gameName={this.state.gameName}
                 gameZoneClassName={this.state.gameZoneClassName}
                 logoAltText={this.state.logoAltText}

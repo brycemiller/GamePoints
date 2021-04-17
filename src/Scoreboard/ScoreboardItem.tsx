@@ -7,8 +7,6 @@ React.Component<Scoreboard.IScoreboardItemProps, Scoreboard.IScoreboardItemState
         super(props);
         this.state = {
             collectableItem: props.collectableItem,
-            quantity: props.quantity,
-            score: props.score,
         }
     }
 
@@ -16,8 +14,8 @@ React.Component<Scoreboard.IScoreboardItemProps, Scoreboard.IScoreboardItemState
         return (
             <tr id={"scoreboarditem-" + this.state.collectableItem.id}>
                 <td>{this.state.collectableItem.label}</td>
-                <td>{this.state.quantity}</td>
-                <td>{this.state.score}</td>
+                <td>{this.props.quantity}</td>
+                <td>{this.props.score}</td>
             </tr>
         );
     }

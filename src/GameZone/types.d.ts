@@ -1,7 +1,7 @@
 declare namespace GameZone {
     interface IGameZoneProps {
         collectableItems: CollectableItem.ICollectableItem[];
-        collectCollectable: CollectableItem.CollectCollectable;
+        onCollectItem: CollectableItem.OnCollectItem;
         gameName: string;
         gameZoneClassName: string;
         logoAltText: string;
@@ -10,7 +10,7 @@ declare namespace GameZone {
     
     interface IGameZoneState {
         collectableItems: CollectableItem.ICollectableItem[];
-        collectCollectable: CollectableItem.CollectCollectable;
+        onCollectItem: CollectableItem.OnCollectItem;
         gameName: string;
         gameZoneClassName: string;
         logoAltText: string;

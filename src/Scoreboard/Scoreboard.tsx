@@ -11,11 +11,6 @@ React.Component<Scoreboard.IScoreboardProps, Scoreboard.IScoreboardState> {
         super(props);
         this.state = {
             scoreboardLang: props.scoreboardLang,
-
-            scoreboardItems:  props.scoreboardItems,
-            bonusTotal: props.bonusTotal,
-            total: props.total,
-
             newGameButton: props.newGameButton,
             resetGame: props.resetGame,
         }
@@ -24,13 +19,13 @@ React.Component<Scoreboard.IScoreboardProps, Scoreboard.IScoreboardState> {
     render() {
         return (
             <><ScoreboardItemList
-                scoreboardItems={this.state.scoreboardItems}
+                scoreboardItems={this.props.scoreboardItems}
                 lang={this.state.scoreboardLang.scoreboardItemListLang}/>
             <ScoreboardBonusTotalizer
-                bonusTotal={this.state.bonusTotal}
+                bonusTotal={this.props.bonusTotal}
                 lang={this.state.scoreboardLang.scoreboardBonusTotalizerLang} />
             <ScoreboardTotal
-                total={this.state.total}
+                total={this.props.total}
                 lang={this.state.scoreboardLang.scoreboardTotalLang} />
             <NewGameButton 
                 newGameButton={this.state.newGameButton}

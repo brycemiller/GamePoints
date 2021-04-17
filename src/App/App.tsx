@@ -21,9 +21,6 @@ const collectableItems: CollectableItem.ICollectableItem[] = [
   },
 ];
 
-const collectCollectable =
-    (collectedCollectable: CollectableItem.ICollectableItem) => console.log(collectedCollectable);
-
 const gameName = "Points";
 const gameZoneClassName = "gameZone";
 const logoAltText = "Kahoot!";
@@ -32,13 +29,13 @@ const logoURL = "kahoot-logo.svg";
 const scoreboardItems: Scoreboard.IScoreboardItem[] = [
   {
     collectableItem: collectableItems[0],
-    quantity: 1,
-    score: 50
+    quantity: 0,
+    score: 0
   },
   {
     collectableItem: collectableItems[1],
-    quantity: 2,
-    score: 90
+    quantity: 0,
+    score: 0
   },
   {
     collectableItem: collectableItems[2],
@@ -58,12 +55,10 @@ const scoreboardItemListLang: Scoreboard.IScoreboardItemListLang = {
   score: "Score"
 }
 
-const bonusTotal = 30;
 const scoreboardBonusTotalizerLang: Scoreboard.IScoreboardBonusTotalizerLang = {
   bonus: "Bonus"
 }
 
-const total = 140;
 const scoreboardTotalLang: Scoreboard.IScoreboardTotalLang = {
   total: "Total"
 }
@@ -83,15 +78,12 @@ const scoreboardLang: Scoreboard.IScoreboardLang = {
 function App() {
   return (
     <><Game collectableItems={collectableItems}
-        collectCollectable={collectCollectable}
         gameName={gameName}
         gameZoneClassName={gameZoneClassName}
         logoAltText={logoAltText}
         logoURL={logoURL}
         scoreboardLang={scoreboardLang}
         scoreboardItems={scoreboardItems}
-        bonusTotal={bonusTotal}
-        total={total}
         newGameButton={newGameButton}
         resetGame={resetGame} /></>
   );

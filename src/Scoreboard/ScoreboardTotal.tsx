@@ -6,7 +6,6 @@ React.Component<Scoreboard.IScoreboardTotalProps, Scoreboard.IScoreboardTotalSta
     constructor(props: Scoreboard.IScoreboardTotalProps) {
         super(props);
         this.state = {
-            total: props.total,
             lang: props.lang,
         }
     }
@@ -15,7 +14,7 @@ React.Component<Scoreboard.IScoreboardTotalProps, Scoreboard.IScoreboardTotalSta
         return (
             <div className="scoreboardTotal">
                 <div>{this.state.lang.total}</div>
-                <div>{this.state.total}</div>
+                <div>{this.props.total}</div>
             </div>
         );
     }

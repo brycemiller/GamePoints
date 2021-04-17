@@ -7,7 +7,6 @@ React.Component<Scoreboard.IScoreboardItemListProps, Scoreboard.IScoreboardItemL
     constructor(props: Scoreboard.IScoreboardItemListProps) {
         super(props);
         this.state = {
-            scoreboardItems:  props.scoreboardItems,
             lang: props.lang,
         }
     }
@@ -23,7 +22,7 @@ React.Component<Scoreboard.IScoreboardItemListProps, Scoreboard.IScoreboardItemL
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.scoreboardItems
+                    {this.props.scoreboardItems
                         .filter(scoreboardItem => scoreboardItem.quantity > 0)
                         .map(scoreboardItem => (
                             <ScoreboardItem key={scoreboardItem.collectableItem.id}

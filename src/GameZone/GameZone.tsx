@@ -8,7 +8,7 @@ React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
         super(props);
         this.state = {
             collectableItems:  props.collectableItems,
-            collectCollectable: props.collectCollectable,
+            onCollectItem: props.onCollectItem,
             gameName: props.gameName,
             gameZoneClassName: props.gameZoneClassName,
             logoAltText: props.logoAltText,
@@ -28,7 +28,7 @@ React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
                     {this.state.collectableItems.map(collectableItem => (
                         <CollectableItem key={collectableItem.id}
                             collectableItem={collectableItem}
-                            collectCollectable={this.state.collectCollectable} />
+                            onCollectItem={this.state.onCollectItem} />
                     ))}
                 </main>
             </div>

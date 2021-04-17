@@ -6,14 +6,14 @@ declare namespace CollectableItem {
 
     interface ICollectableItemProps {
         collectableItem: ICollectableItem;
-        collectCollectable: CollectCollectable;
+        onCollectItem: OnCollectItem;
     }
     
     interface ICollectableItemState {
         id: string;
         label: string;
-        collectCollectable: CollectCollectable;
+        onCollectItem: OnCollectItem;
     }
 
-    type CollectCollectable = (collectedCollectable: Collectable) => void;
+    type OnCollectItem = (collectedItem: Collectable) => void;
 }

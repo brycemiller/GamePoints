@@ -103,4 +103,17 @@
 - git commit -m "T13: Made game component encapsulating gamezone and scoreboard, with render tests"
 - git commit -m "Added refactoring tasks to task list"
 
+22:30 Time to sleep
+- Tomorrow, work on T10, T11, T14
+
+17.04.2021
+12:15 T10 - Write scoring function
+- First I need to solve the problem of how to make the subcomponents update when the state in the parent components updates.  React documentation describes a solution here: https://reactjs.org/docs/lifting-state-up.html
+- git commit -m "Lifted up state for bonus and total to game component. Added functions for handling item collection with dummy data as appropriate"
+
+
+
+
+
+
 
