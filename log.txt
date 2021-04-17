@@ -130,9 +130,12 @@
 - ^^ These should have been prefixed with T11, woops :(
 - git commit -m "Marked T10 and T11 as done"
 
-20: T18 - complete styling
+21:05 T18 - complete styling
 - Would be nice to incorporate colours from Kahoot, so check their website for colour palette/existing CSS I can borrow
 - git commit -m "T18: Added styling for game.  Refactored game zone class name to static string.  Added button colors.  Added player items heading."
+
+23:30 Quittin' time
+- git commit -m "Added new task to task list for making scoreboard items from collectable items passed in"
 
 
 
