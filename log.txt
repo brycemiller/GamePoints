@@ -110,7 +110,7 @@
 12:15 T10 - Write scoring function
 - First I need to solve the problem of how to make the subcomponents update when the state in the parent components updates.  React documentation describes a solution here: https://reactjs.org/docs/lifting-state-up.html
 - git commit -m "Lifted up state for bonus and total to game component. Added functions for handling item collection with dummy data as appropriate"
-
+- git commit -m "Marked completed tasks with +-sign in task list"
 
 
 

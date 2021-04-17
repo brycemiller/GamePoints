@@ -1,17 +1,17 @@
-T0 - Set up environment
-T1 - Create initial app boiler plate
-T2 - Strip down boiler plate
-T3 - Make collectable item
-T4 - Make game zone (section at left)
-T5 - Make scoreboard item
-T6 - Make scoreboard list
-T7 - Make scoreboard bonus
-T8 - Make scoreboard total
-T9 - Make new game button
++T0 - Set up environment
++T1 - Create initial app boiler plate
++T2 - Strip down boiler plate
++T3 - Make collectable item
++T4 - Make game zone (section at left)
++T5 - Make scoreboard item
++T6 - Make scoreboard list
++T7 - Make scoreboard bonus
++T8 - Make scoreboard total
++T9 - Make new game button
 T10 - Write scoring function
 T11 - Write new game functionality
-T12 - Refactor types
-T13 - Make game component
++T12 - Refactor types
++T13 - Make game component
 T14 - Get game settings/props from json file
 T15 - Refactor strings in components to use lang prop
 T16 - Refactor new game button prop to use a better name
