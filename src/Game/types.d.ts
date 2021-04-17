@@ -1,4 +1,15 @@
 declare namespace Game {
+    interface IBonusPointsScheme {
+        amount: number,
+        per: number,
+    }
+
+    interface IPointsScheme {
+        id: string,
+        unitPoints: number,
+        bonusPoints: IBonusPointsScheme,
+    }
+
     interface IGameProps {
         collectableItems: CollectableItem.ICollectableItem[],
 
@@ -31,5 +42,7 @@ declare namespace Game {
         
         newGameButton: Controls.INewGameButton,
         resetGame: Controls.ResetGame,
+
+        pointsScheme: IPointsScheme[],
     }
 }

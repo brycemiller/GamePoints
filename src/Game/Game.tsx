@@ -23,36 +23,100 @@ React.Component<Game.IGameProps, Game.IGameState> {
             
             newGameButton: props.newGameButton,
             resetGame: props.resetGame,
+
+            pointsScheme: require('../pointsScheme.json'),
         }
     }
 
-    onCollectItem = (collectedItem: CollectableItem.ICollectableItem) => {
+    onCollectItem = (collectedItem: CollectableItem.ICollectableItem): void => {
         this.updateScoreboardItems(collectedItem);
         this.updateTotal(collectedItem);
         this.updateBonusTotal(collectedItem);
     }
 
-    updateTotal(collectedItem: CollectableItem.ICollectableItem) {
-        this.setState({total: this.state.total+10});
+    getPointsSchemeForCollectableItem(collectableItem: CollectableItem.ICollectableItem)
+        : Game.IPointsScheme | undefined {
+        return this.state.pointsScheme
+            .filter(pointsScheme => pointsScheme.id === collectableItem.id)
+            .shift();
     }
 
-    updateBonusTotal(collectedItem: CollectableItem.ICollectableItem) {
-        this.setState({bonusTotal: this.state.total % 50 === 0 ?
-            this.state.bonusTotal+50 :
-            this.state.bonusTotal});
+    
+    /**
+     * Calculates the total score, including bonuses, for a given quantity and a
+     * given points scheme.
+     * 
+     * The bonus amount is defined in terms of total points for a group of X items.
+     *
+     * To calculate the new total, we need to know the number of bonus groupings,
+     * and the number of items remaining.
+     *
+     * We multiply each of these by their respective values, and sum them together
+     * to get the new score.
+     */
+    calculateScoreForQuantity(pointsScheme: Game.IPointsScheme, quantity: number): number {
+        const unitPoints = pointsScheme.unitPoints;
+        const bonusAmount = pointsScheme.bonusPoints.amount;
+        const bonusPer = pointsScheme.bonusPoints.per;
+
+        const numBonusGroups = bonusPer > 0 ? Math.floor(quantity/bonusPer) : 0;
+        const remainder = bonusPer > 0 ? quantity%bonusPer : quantity;
+
+        return (numBonusGroups * bonusAmount) + (remainder * unitPoints);
     }
 
-    updateScoreboardItems(collectedItem: CollectableItem.ICollectableItem) {
+    updateTotal(collectedItem: CollectableItem.ICollectableItem): void {
+        const newTotal = this.state.scoreboardItems
+            .map(scoreboardItem => scoreboardItem.score)
+            .reduce((sum, currentTotal) => sum + currentTotal);
+
+        this.setState({total: newTotal});
+    }
+
+    updateBonusTotal(collectedItem: CollectableItem.ICollectableItem): void {
+        let newBonusTotal = 0;
+
+        this.state.scoreboardItems.forEach(scoreboardItem => {
+            const pointsScheme = this.getPointsSchemeForCollectableItem(scoreboardItem.collectableItem);
+
+            if (pointsScheme !== undefined) {
+                newBonusTotal +=
+                    (scoreboardItem.score - (scoreboardItem.quantity * pointsScheme.unitPoints));
+            }
+        });
+
+        this.setState({bonusTotal: newBonusTotal});
+    }
+
+    updateScoreboardItems(collectedItem: CollectableItem.ICollectableItem): void {
         // Get correct item
         const scoreboardItem = this.state.scoreboardItems
             .filter(scoreboardItem => scoreboardItem.collectableItem.id === collectedItem.id)
             .shift();
 
-        // Only legitimate collected items should be counted
-        if (scoreboardItem !== undefined) {
-            scoreboardItem.quantity += 1;
-            scoreboardItem.score += 10;
+        if (scoreboardItem === undefined)
+            return;
+
+        // Get points scheme for item
+        const collectableItemPointsScheme =
+            this.getPointsSchemeForCollectableItem(collectedItem);
+
+        if (collectableItemPointsScheme === undefined) {
+            // No points scheme, so just update quantity collected and propagate
+            scoreboardItem.quantity+=1;
+            this.setState({scoreboardItems: this.state.scoreboardItems});
+
+            return;
         }
+
+        // Calculate points
+        const newQuantity = scoreboardItem.quantity + 1;
+        const newScore = this.calculateScoreForQuantity(
+            collectableItemPointsScheme, newQuantity)
+
+        // Update scoreboard item
+        scoreboardItem.quantity = newQuantity;
+        scoreboardItem.score = newScore
 
         // Propagate changes
         this.setState({scoreboardItems: this.state.scoreboardItems});
