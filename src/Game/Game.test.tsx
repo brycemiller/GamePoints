@@ -6,18 +6,22 @@ const collectableItems: CollectableItem.ICollectableItem[] = [
     {
         id: 'A',
         label: 'A',
+        color: 'blue',
     },
     {
         id: 'B',
         label: 'B',
+        color: 'green',
     },
     {
         id: 'C',
         label: 'C',
+        color: 'red',
     },
     {
         id: 'D',
         label: 'D',
+        color: 'yellow',
     },
 ];
 
@@ -78,22 +82,18 @@ const scoreboardLang: Scoreboard.IScoreboardLang = {
     scoreboardItemListLang: scoreboardItemListLang,
     scoreboardBonusTotalizerLang: scoreboardBonusTotalizerLang,
     scoreboardTotalLang: scoreboardTotalLang,
+    playerItems: 'Player Items',
 }
 
 test('gamezone renders', () => {
     render (
         <Game collectableItems={collectableItems}
-            collectCollectable={collectCollectable}
             gameName={gameName}
-            gameZoneClassName={gameZoneClassName}
             logoAltText={logoAltText}
             logoURL={logoURL}
             scoreboardLang={scoreboardLang}
             scoreboardItems={scoreboardItems}
-            bonusTotal={bonusTotal}
-            total={total}
-            newGameButton={newGameButton}
-            resetGame={resetGame} />
+            newGameButton={newGameButton} />
     );
 
     const gameZone = screen.getByText(gameName + '.');
@@ -103,17 +103,12 @@ test('gamezone renders', () => {
 test('scoreboard renders', () => {
     render (
         <Game collectableItems={collectableItems}
-            collectCollectable={collectCollectable}
             gameName={gameName}
-            gameZoneClassName={gameZoneClassName}
             logoAltText={logoAltText}
             logoURL={logoURL}
             scoreboardLang={scoreboardLang}
             scoreboardItems={scoreboardItems}
-            bonusTotal={bonusTotal}
-            total={total}
-            newGameButton={newGameButton}
-            resetGame={resetGame} />
+            newGameButton={newGameButton} />
     );
 
     const scoreboardItemListItemHeading = screen.getByText(scoreboardItemListLang.item);
@@ -128,14 +123,8 @@ test('scoreboard renders', () => {
     const scoreboardbonusTotalizerBonusLabel = screen.getByText(scoreboardBonusTotalizerLang.bonus);
     expect(scoreboardbonusTotalizerBonusLabel).toBeInTheDocument();
 
-    const scoreboardbonusTotalizerBonusTotal = screen.getByText(bonusTotal);
-    expect(scoreboardbonusTotalizerBonusTotal).toBeInTheDocument();
-
-    const scoreboardbonusTotalTotalLabel = screen.getByText(scoreboardTotalLang.total);
-    expect(scoreboardbonusTotalTotalLabel).toBeInTheDocument();
-
-    const scoreboardbonusTotalTotalValue = screen.getByText(total);
-    expect(scoreboardbonusTotalTotalValue).toBeInTheDocument();
+    const scoreboardbonusTotalLabel = screen.getByText(scoreboardTotalLang.total);
+    expect(scoreboardbonusTotalLabel).toBeInTheDocument();
 
     const button = screen.getByText(newGameButton.label);
     expect(button).toBeInTheDocument();

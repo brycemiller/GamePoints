@@ -14,7 +14,7 @@ const resetGame = () => resetGameCalled = true;
 
 test('button renders', () => {
     render (
-        <NewGameButton newGameButton={newGameButton} resetGame={resetGame} />
+        <NewGameButton newGameButton={newGameButton} onNewGame={resetGame} />
     );
 
     const button = screen.getByText(newGameButtonLabel);
@@ -23,7 +23,7 @@ test('button renders', () => {
 
 test('button click event is handled using custom function', () => {
     render (
-        <NewGameButton newGameButton={newGameButton} resetGame={resetGame} />
+        <NewGameButton newGameButton={newGameButton} onNewGame={resetGame} />
     );
 
     const button = screen.getByText(newGameButtonLabel);

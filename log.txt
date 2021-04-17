@@ -136,6 +136,7 @@
 
 23:30 Quittin' time
 - git commit -m "Added new task to task list for making scoreboard items from collectable items passed in"
+- git commit -m "Fixed tests after all that refactoring..."
 
 
 
