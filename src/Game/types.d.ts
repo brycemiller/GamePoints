@@ -14,7 +14,6 @@ declare namespace Game {
         collectableItems: CollectableItem.ICollectableItem[],
 
         gameName: string,
-        gameZoneClassName: string,
         logoAltText: string,
         logoURL: string,
 
@@ -29,7 +28,6 @@ declare namespace Game {
         collectableItems: CollectableItem.ICollectableItem[],
 
         gameName: string,
-        gameZoneClassName: string,
         logoAltText: string,
         logoURL: string,
 

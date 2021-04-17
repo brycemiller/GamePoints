@@ -1,28 +1,32 @@
 import React from 'react';
 import Game from '../Game/Game';
+import CollectableItem from '../CollectableItem/CollectableItem'
 import './App.css';
 
 const collectableItems: CollectableItem.ICollectableItem[] = [
   {
     id: 'A',
     label: 'A',
+    color: "red",
   },
   {
     id: 'B',
     label: 'B',
+    color: "blue",
   },
   {
     id: 'C',
     label: 'C',
+    color: "green",
   },
   {
     id: 'D',
     label: 'D',
+    color: "yellow",
   },
 ];
 
 const gameName = "Points";
-const gameZoneClassName = "gameZone";
 const logoAltText = "Kahoot!";
 const logoURL = "kahoot-logo.svg";
 
@@ -72,13 +76,14 @@ const scoreboardLang: Scoreboard.IScoreboardLang = {
   scoreboardItemListLang: scoreboardItemListLang,
   scoreboardBonusTotalizerLang: scoreboardBonusTotalizerLang,
   scoreboardTotalLang: scoreboardTotalLang,
+
+  playerItems: "Player Items",
 }
 
 function App() {
   return (
     <><Game collectableItems={collectableItems}
         gameName={gameName}
-        gameZoneClassName={gameZoneClassName}
         logoAltText={logoAltText}
         logoURL={logoURL}
         scoreboardLang={scoreboardLang}

@@ -3,7 +3,6 @@ declare namespace GameZone {
         collectableItems: CollectableItem.ICollectableItem[];
         onCollectItem: CollectableItem.OnCollectItem;
         gameName: string;
-        gameZoneClassName: string;
         logoAltText: string;
         logoURL: string;
     }
@@ -12,7 +11,6 @@ declare namespace GameZone {
         collectableItems: CollectableItem.ICollectableItem[];
         onCollectItem: CollectableItem.OnCollectItem;
         gameName: string;
-        gameZoneClassName: string;
         logoAltText: string;
         logoURL: string;
     }

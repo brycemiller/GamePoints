@@ -18,18 +18,23 @@ React.Component<Scoreboard.IScoreboardProps, Scoreboard.IScoreboardState> {
 
     render() {
         return (
-            <><ScoreboardItemList
-                scoreboardItems={this.props.scoreboardItems}
-                lang={this.state.scoreboardLang.scoreboardItemListLang}/>
-            <ScoreboardBonusTotalizer
-                bonusTotal={this.props.bonusTotal}
-                lang={this.state.scoreboardLang.scoreboardBonusTotalizerLang} />
-            <ScoreboardTotal
-                total={this.props.total}
-                lang={this.state.scoreboardLang.scoreboardTotalLang} />
-            <NewGameButton 
-                newGameButton={this.state.newGameButton}
-                onNewGame={this.state.onNewGame} /></>
+            <><div className="scoreboard">
+                <div className="header">{this.state.scoreboardLang.playerItems}</div>
+                <ScoreboardItemList
+                    scoreboardItems={this.props.scoreboardItems}
+                    lang={this.state.scoreboardLang.scoreboardItemListLang}/>
+                <ScoreboardBonusTotalizer
+                    bonusTotal={this.props.bonusTotal}
+                    lang={this.state.scoreboardLang.scoreboardBonusTotalizerLang} />
+                <div className="totalAndNewGameButton">
+                    <ScoreboardTotal
+                        total={this.props.total}
+                        lang={this.state.scoreboardLang.scoreboardTotalLang} />
+                    <NewGameButton
+                        newGameButton={this.state.newGameButton}
+                        onNewGame={this.state.onNewGame} />
+                </div>
+            </div></>
         );
     }
 }

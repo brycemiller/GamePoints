@@ -7,6 +7,7 @@ React.Component<CollectableItem.ICollectableItemProps, CollectableItem.ICollecta
         super(props);
         this.state = {
             id:  props.collectableItem.id,
+            color: props.collectableItem.color,
             label: props.collectableItem.label,
             onCollectItem: props.onCollectItem,
         }
@@ -14,7 +15,7 @@ React.Component<CollectableItem.ICollectableItemProps, CollectableItem.ICollecta
 
     render() {
         return (
-            <button className="collectableItem"
+            <button className={"collectableItem " + this.state.color}
                 onClick={() => this.state.onCollectItem(this.props.collectableItem)}>
                 {this.state.label}
             </button>

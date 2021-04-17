@@ -12,8 +12,10 @@ React.Component<Scoreboard.IScoreboardItemProps, Scoreboard.IScoreboardItemState
 
     render() {
         return (
-            <tr id={"scoreboarditem-" + this.state.collectableItem.id}>
-                <td>{this.state.collectableItem.label}</td>
+            <tr className="scoreboarditem" id={"scoreboarditem-" + this.state.collectableItem.id}>
+                <td className="label">
+                    <span className={this.state.collectableItem.color}>{this.state.collectableItem.label}</span>
+                </td>
                 <td>{this.props.quantity}</td>
                 <td>{this.props.score}</td>
             </tr>

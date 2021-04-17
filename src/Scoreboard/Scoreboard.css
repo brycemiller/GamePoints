@@ -1,9 +1,55 @@
-table {
-    border-spacing: 20px 15px;
+.scoreboard {
+    height: 97vh;
+    overflow: hidden;
     text-align: center;
 }
 
-.scoreboardBonusTotalizer > span,
-.scoreboardTotal > div {
+.scoreboard > * {
+    border-bottom: 1px solid rgb(51, 51, 51);
+}
+
+.scoreboard > table {
+    border-spacing: 20px 15px;
+}
+
+.scoreboard > table > tbody > tr > td {
+    width: 33%;
+}
+
+.scoreboard > table > tbody > tr.scoreboarditem > td.label > span {
+    border-radius: 4px;
+    color: white;
+    display: table-cell;
+    height: 60px;
+    vertical-align: middle;
+    width: 60px;
+}
+
+.scoreboard > table > tbody > tr.scoreboarditem > td.label > span:hover {
+    box-shadow: rgb(0 0 0 / 25%) 0px -2px inset;
+}
+
+.scoreboard > .scoreboardBonusTotalizer {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.scoreboard > .totalAndNewGameButton {
+    border-bottom: none;
+    padding-top: 20px;
+}
+
+.scoreboard > .totalAndNewGameButton > .scoreboardTotal {
+    float: left;
+}
+
+.scoreboard > .totalAndNewGameButton > .newGameButton {
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.scoreboard > .scoreboardBonusTotalizer > span,
+.scoreboard > .totalAndNewGameButton > .scoreboardTotal > div {
     margin-left: 15px;
 }

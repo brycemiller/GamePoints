@@ -14,7 +14,7 @@ React.Component<Controls.INewGameButtonProps, Controls.INewGameButtonState> {
 
     render() {
         return (
-            <button className="newGameButton" onClick={() => this.state.onNewGame()}>
+            <button className="newGameButton green" onClick={() => this.state.onNewGame()}>
                 {this.state.label}
             </button>
         );

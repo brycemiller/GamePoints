@@ -1,8 +1,16 @@
-button {
-    margin: 25px;
+.gameZone {
+    float: left;
+    height: 97vh;
+    overflow: hidden;
+    width: 60%;
 }
 
-img {
+.gameZone > header > img {
     margin: 0px 15px 0px 0px;
     width: 6rem;
+}
+
+.gameZone > main {
+    height: inherit;
+    overflow-y: scroll;
 }

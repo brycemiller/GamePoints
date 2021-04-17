@@ -10,7 +10,6 @@ React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
             collectableItems:  props.collectableItems,
             onCollectItem: props.onCollectItem,
             gameName: props.gameName,
-            gameZoneClassName: props.gameZoneClassName,
             logoAltText: props.logoAltText,
             logoURL: props.logoURL,
         }
@@ -18,7 +17,7 @@ React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
 
     render() {
         return (
-            <div className={this.state.gameZoneClassName}>
+            <div className="gameZone">
                 <header>
                     <img src={process.env.PUBLIC_URL + '/' + this.state.logoURL}
                         alt={this.state.logoAltText} />

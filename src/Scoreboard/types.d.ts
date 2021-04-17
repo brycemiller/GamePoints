@@ -74,6 +74,8 @@ declare namespace Scoreboard {
         scoreboardItemListLang: IScoreboardItemListLang,
         scoreboardBonusTotalizerLang: IScoreboardBonusTotalizerLang,
         scoreboardTotalLang: IScoreboardTotalLang,
+
+        playerItems: string,
     }
 
     interface IScoreboardProps {

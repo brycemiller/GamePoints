@@ -11,7 +11,6 @@ React.Component<Game.IGameProps, Game.IGameState> {
             collectableItems: props.collectableItems,
 
             gameName: props.gameName,
-            gameZoneClassName: props.gameZoneClassName,
             logoAltText: props.logoAltText,
             logoURL: props.logoURL,
 
@@ -142,7 +141,6 @@ React.Component<Game.IGameProps, Game.IGameState> {
             <><GameZone collectableItems={this.state.collectableItems}
                 onCollectItem={this.onCollectItem}
                 gameName={this.state.gameName}
-                gameZoneClassName={this.state.gameZoneClassName}
                 logoAltText={this.state.logoAltText}
                 logoURL={this.state.logoURL} />
             <Scoreboard scoreboardLang={this.state.scoreboardLang}
