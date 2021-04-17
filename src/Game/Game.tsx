@@ -22,7 +22,6 @@ React.Component<Game.IGameProps, Game.IGameState> {
             total: 0,
             
             newGameButton: props.newGameButton,
-            resetGame: props.resetGame,
 
             pointsScheme: require('../pointsScheme.json'),
         }
@@ -32,6 +31,27 @@ React.Component<Game.IGameProps, Game.IGameState> {
         this.updateScoreboardItems(collectedItem);
         this.updateTotal(collectedItem);
         this.updateBonusTotal(collectedItem);
+    }
+
+    onNewGame = (): void => {
+        this.resetScoreboardItems();
+        this.resetTotal();
+        this.resetBonusTotal();
+    }
+
+    resetScoreboardItems(): void {
+        this.state.scoreboardItems.forEach(scoreboardItem => {
+            scoreboardItem.quantity = 0;
+            scoreboardItem.score = 0;
+        });
+    }
+
+    resetTotal(): void {
+        this.setState({total: 0});
+    }
+
+    resetBonusTotal(): void {
+        this.setState({bonusTotal: 0});
     }
 
     getPointsSchemeForCollectableItem(collectableItem: CollectableItem.ICollectableItem)
@@ -59,8 +79,8 @@ React.Component<Game.IGameProps, Game.IGameState> {
         const bonusAmount = pointsScheme.bonusPoints.amount;
         const bonusPer = pointsScheme.bonusPoints.per;
 
-        const numBonusGroups = bonusPer > 0 ? Math.floor(quantity/bonusPer) : 0;
-        const remainder = bonusPer > 0 ? quantity%bonusPer : quantity;
+        const numBonusGroups = bonusPer > 0 ? Math.floor(quantity / bonusPer) : 0;
+        const remainder = bonusPer > 0 ? quantity % bonusPer : quantity;
 
         return (numBonusGroups * bonusAmount) + (remainder * unitPoints);
     }
@@ -104,8 +124,6 @@ React.Component<Game.IGameProps, Game.IGameState> {
         if (collectableItemPointsScheme === undefined) {
             // No points scheme, so just update quantity collected and propagate
             scoreboardItem.quantity+=1;
-            this.setState({scoreboardItems: this.state.scoreboardItems});
-
             return;
         }
 
@@ -117,9 +135,6 @@ React.Component<Game.IGameProps, Game.IGameState> {
         // Update scoreboard item
         scoreboardItem.quantity = newQuantity;
         scoreboardItem.score = newScore
-
-        // Propagate changes
-        this.setState({scoreboardItems: this.state.scoreboardItems});
     }
 
     render() {
@@ -135,7 +150,7 @@ React.Component<Game.IGameProps, Game.IGameState> {
                 bonusTotal={this.state.bonusTotal}
                 total={this.state.total}
                 newGameButton={this.state.newGameButton}
-                resetGame={this.state.resetGame} /></>
+                onNewGame={this.onNewGame} /></>
         );
     }
 }

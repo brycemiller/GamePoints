@@ -12,7 +12,7 @@ React.Component<Scoreboard.IScoreboardProps, Scoreboard.IScoreboardState> {
         this.state = {
             scoreboardLang: props.scoreboardLang,
             newGameButton: props.newGameButton,
-            resetGame: props.resetGame,
+            onNewGame: props.onNewGame,
         }
     }
 
@@ -29,7 +29,7 @@ React.Component<Scoreboard.IScoreboardProps, Scoreboard.IScoreboardState> {
                 lang={this.state.scoreboardLang.scoreboardTotalLang} />
             <NewGameButton 
                 newGameButton={this.state.newGameButton}
-                resetGame={this.state.resetGame} /></>
+                onNewGame={this.state.onNewGame} /></>
         );
     }
 }

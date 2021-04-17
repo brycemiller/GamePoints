@@ -8,13 +8,13 @@ React.Component<Controls.INewGameButtonProps, Controls.INewGameButtonState> {
         this.state = {
             id:  props.newGameButton.id,
             label: props.newGameButton.label,
-            resetGame: props.resetGame,
+            onNewGame: props.onNewGame,
         }
     }
 
     render() {
         return (
-            <button className="newGameButton" onClick={() => this.state.resetGame()}>
+            <button className="newGameButton" onClick={() => this.state.onNewGame()}>
                 {this.state.label}
             </button>
         );

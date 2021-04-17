@@ -82,12 +82,12 @@ declare namespace Scoreboard {
         bonusTotal: number,
         total: number,
         newGameButton: Controls.INewGameButton,
-        resetGame: Controls.ResetGame,
+        onNewGame: Controls.OnNewGame,
     }
 
     interface IScoreboardState {
         scoreboardLang: IScoreboardLang,
         newGameButton: Controls.INewGameButton,
-        resetGame: Controls.ResetGame,
+        onNewGame: Controls.OnNewGame,
     }
 }

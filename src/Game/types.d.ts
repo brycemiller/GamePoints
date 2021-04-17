@@ -23,7 +23,6 @@ declare namespace Game {
         scoreboardItems: Scoreboard.IScoreboardItem[],
 
         newGameButton: Controls.INewGameButton,
-        resetGame: Controls.ResetGame,
     }
 
     interface IGameState {
@@ -41,7 +40,6 @@ declare namespace Game {
         total: number,
         
         newGameButton: Controls.INewGameButton,
-        resetGame: Controls.ResetGame,
 
         pointsScheme: IPointsScheme[],
     }

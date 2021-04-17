@@ -67,7 +67,6 @@ const newGameButton: Controls.INewGameButton = {
   id: "NewGameButton",
   label: "New Game"
 }
-const resetGame = () => console.log('Resetting game');
 
 const scoreboardLang: Scoreboard.IScoreboardLang = {
   scoreboardItemListLang: scoreboardItemListLang,
@@ -84,8 +83,7 @@ function App() {
         logoURL={logoURL}
         scoreboardLang={scoreboardLang}
         scoreboardItems={scoreboardItems}
-        newGameButton={newGameButton}
-        resetGame={resetGame} /></>
+        newGameButton={newGameButton} /></>
   );
 }
 

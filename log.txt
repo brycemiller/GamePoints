@@ -121,6 +121,10 @@
 - git commit m "Added functions for calculating total per scorebaord item, grand total, and bonus amount."
 - git commit -m "Added new task to add sanity checks for values and to complete styling."
 
+20:45 T11 - write new game functionality
+- New function to handle button click
+- Reset scoreboard item values to 0, reset total and bonus total to 0
+- git commit -m "Implemented new game functionality.  Moved game reset function to Game component and refactored naming; adjusted some whitespace"
 
 
 
