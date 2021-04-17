@@ -111,6 +111,7 @@
 - First I need to solve the problem of how to make the subcomponents update when the state in the parent components updates.  React documentation describes a solution here: https://reactjs.org/docs/lifting-state-up.html
 - git commit -m "Lifted up state for bonus and total to game component. Added functions for handling item collection with dummy data as appropriate"
 - git commit -m "Marked completed tasks with +-sign in task list"
+- ^^ These should have been prefixed with T10, woops :(
 - Now that the gamezone and scoreboard are connected, let's work on the scoring function.  First update score based on unit total, then work in bonuses.
 
 14:30 Wake up baby
@@ -120,11 +121,14 @@
 - Finished writing total function and item total functions, start on bonus calculation
 - git commit m "Added functions for calculating total per scorebaord item, grand total, and bonus amount."
 - git commit -m "Added new task to add sanity checks for values and to complete styling."
+- ^^ These should have been prefixed with T10, woops :(
 
 20:45 T11 - write new game functionality
 - New function to handle button click
 - Reset scoreboard item values to 0, reset total and bonus total to 0
 - git commit -m "Implemented new game functionality.  Moved game reset function to Game component and refactored naming; adjusted some whitespace"
+- ^^ These should have been prefixed with T11, woops :(
+- git commit -m "Marked T10 and T11 as done"
 
 
 
