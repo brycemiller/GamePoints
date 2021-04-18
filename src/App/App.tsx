@@ -32,29 +32,6 @@ const gameZoneLang: GameZone.IGameZoneLang = {
 }
 const logoURL = "kahoot-logo.svg";
 
-const scoreboardItems: Scoreboard.IScoreboardItem[] = [
-  {
-    collectableItem: collectableItems[0],
-    quantity: 0,
-    score: 0
-  },
-  {
-    collectableItem: collectableItems[1],
-    quantity: 0,
-    score: 0
-  },
-  {
-    collectableItem: collectableItems[2],
-    quantity: 0,
-    score: 0
-  },
-  {
-    collectableItem: collectableItems[3],
-    quantity: 0,
-    score: 0
-  },
-]
-
 const scoreboardItemListLang: Scoreboard.IScoreboardItemListLang = {
   item: "Item",
   quantity: "QTY",
@@ -88,7 +65,6 @@ function App() {
         gameZoneLang={gameZoneLang}
         logoURL={logoURL}
         scoreboardLang={scoreboardLang}
-        scoreboardItems={scoreboardItems}
         newGameButton={newGameButton} /></>
   );
 }

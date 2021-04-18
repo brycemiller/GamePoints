@@ -15,7 +15,14 @@ React.Component<Game.IGameProps, Game.IGameState> {
             gameZoneLang: props.gameZoneLang,
             scoreboardLang: props.scoreboardLang,
 
-            scoreboardItems: props.scoreboardItems,
+            // Build scoreboard items array from collectable items specified
+            scoreboardItems: props.collectableItems.map(collectableItem => {
+                return {
+                    collectableItem: collectableItem,
+                    quantity: 0,
+                    score: 0,
+                }
+            }),
             bonusTotal: 0,
             total: 0,
             

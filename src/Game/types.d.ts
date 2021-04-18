@@ -18,8 +18,6 @@ declare namespace Game {
         gameZoneLang: GameZone.IGameZoneLang,
         scoreboardLang: Scoreboard.IScoreboardLang,
 
-        scoreboardItems: Scoreboard.IScoreboardItem[],
-
         newGameButton: Controls.INewGameButton,
     }
 
