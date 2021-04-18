@@ -1,6 +1,6 @@
 import React from 'react';
 import Game from '../Game/Game';
-import CollectableItem from '../CollectableItem/CollectableItem'
+import POINTS_SCHEME from '../pointsScheme.json';
 import './App.css';
 
 const collectableItems: CollectableItem.ICollectableItem[] = [
@@ -56,7 +56,7 @@ const scoreboardLang: Scoreboard.IScoreboardLang = {
   scoreboardBonusTotalizerLang: scoreboardBonusTotalizerLang,
   scoreboardTotalLang: scoreboardTotalLang,
 
-  playerItems: "Player Items",
+  scoreboardHeading: "Player Items",
 }
 
 function App() {
@@ -65,7 +65,8 @@ function App() {
         gameZoneLang={gameZoneLang}
         logoURL={logoURL}
         scoreboardLang={scoreboardLang}
-        newGameButton={newGameButton} /></>
+        newGameButton={newGameButton}
+        pointsScheme={POINTS_SCHEME} /></>
   );
 }
 

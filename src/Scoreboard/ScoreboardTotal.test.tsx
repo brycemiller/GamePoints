@@ -1,20 +1,18 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ScoreboardTotal from './ScoreboardTotal';
-
-const total = 140;
-const scoreboardTotalLang: Scoreboard.IScoreboardTotalLang = {
-  total: "Total"
-}
+import { scoreboardTotal,
+  scoreboardTotalLang,
+} from '../TestHelpers/testValues';
 
 test('scoreboard bonus totalizer renders', () => {
     render (
-      <ScoreboardTotal total={total} lang={scoreboardTotalLang} />
+      <ScoreboardTotal total={scoreboardTotal} lang={scoreboardTotalLang} />
     );
 
     const scoreboardbonusTotalTotalLabel = screen.getByText(scoreboardTotalLang.total);
     expect(scoreboardbonusTotalTotalLabel).toBeInTheDocument();
 
-    const scoreboardbonusTotalTotalValue = screen.getByText(total);
+    const scoreboardbonusTotalTotalValue = screen.getByText(scoreboardTotal);
     expect(scoreboardbonusTotalTotalValue).toBeInTheDocument();
 });

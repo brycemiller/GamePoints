@@ -12,7 +12,7 @@
 +T11 - Write new game functionality
 +T12 - Refactor types
 +T13 - Make game component
-T14 - Get game settings/props from json file
+T14 - Get game settings/props and test values from json file
 +T15 - Refactor strings in components to use lang prop
 +T16 - Refactor new game button prop to use a better name
 T17 - Sanity checks for negative numbers, etc
@@ -20,5 +20,5 @@ T17 - Sanity checks for negative numbers, etc
 +T19 - Make scoreboarditems from collectable items instead of passing in
 +T20 - Move score calculation code out into own class
 T21 - Review own code and add comments, clean-up, etc
-T22 - Make outstanding tests and integration tests
++T22 - Make outstanding tests and integration tests
 T23 - Styling of points table still a bit buggy - tbody should scroll

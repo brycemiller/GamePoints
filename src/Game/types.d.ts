@@ -21,6 +21,8 @@ declare namespace Game {
         scoreboardLang: Scoreboard.IScoreboardLang,
 
         newGameButton: Controls.INewGameButton,
+
+        pointsScheme: Game.IPointsScheme[],
     }
 
     interface IGameState {

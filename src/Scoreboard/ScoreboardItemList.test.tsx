@@ -1,56 +1,7 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ScoreboardItemList from './ScoreboardItemList';
-
-const collectableItemId = 'test-id-';
-const collectableItemLabel = 'test-label-';
-const collectableItems: CollectableItem.ICollectableItem[] = [
-    {
-        id: collectableItemId+'A',
-        label: collectableItemLabel+'A',
-    },
-    {
-        id: collectableItemId+'B',
-        label: collectableItemLabel+'B',
-    },
-    {
-        id: collectableItemId+'C',
-        label: collectableItemLabel+'C',
-    },
-    {
-        id: collectableItemId+'D',
-        label: collectableItemLabel+'D',
-    },
-];
-
-const scoreboardItems: Scoreboard.IScoreboardItem[] = [
-    {
-        collectableItem: collectableItems[0],
-        quantity: 1,
-        score: 50
-    },
-    {
-        collectableItem: collectableItems[1],
-        quantity: 2,
-        score: 90
-    },
-    {
-        collectableItem: collectableItems[2],
-        quantity: 0,
-        score: 0
-    },
-    {
-        collectableItem: collectableItems[3],
-        quantity: 0,
-        score: 0
-    },
-]
-
-const scoreboardItemListLang: Scoreboard.IScoreboardItemListLang = {
-    item: "Item",
-    quantity: "QTY",
-    score: "Score"
-}
+import { scoreboardItemListLang, scoreboardItems } from '../TestHelpers/testValues';
 
 test('scoreboard header renders', () => {
     render (
@@ -72,8 +23,9 @@ test('one scoreboard item rendered', () => {
     [
         {
             collectableItem: {
-                id: collectableItemId+'Z',
-                label: collectableItemLabel+'Z',
+                id: 'Z',
+                label: 'Z',
+                color: 'yellow',
             },
             quantity: 2,
             score: 30

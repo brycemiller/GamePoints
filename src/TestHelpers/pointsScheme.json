@@ -1,0 +1,34 @@
+[
+    {
+        "id": "A",
+        "unitPoints": 50,
+        "bonusPoints": {
+            "amount": 200,
+            "per": 3
+        }
+    },
+    {
+        "id": "B",
+        "unitPoints": 30,
+        "bonusPoints": {
+            "amount": 90,
+            "per": 2
+        }
+    },
+    {
+        "id": "C",
+        "unitPoints": 20,
+        "bonusPoints": {
+            "amount": 0,
+            "per": 0
+        }
+    },
+    {
+        "id": "D",
+        "unitPoints": 15,
+        "bonusPoints": {
+            "amount": 0,
+            "per": 0
+        }
+    }
+]

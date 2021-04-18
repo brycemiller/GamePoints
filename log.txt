@@ -152,8 +152,18 @@
 - git commit -m "T20: Refactored scoring code into own PointsCalculator helper class"
 - git commit -m "Added new task because the scoreboard CSS is still a bit buggy"
 
-13:40 T22 - Remaining test, but probably need to fix some first...
+13:40 T22 - Remaining tests, but probably need to fix some first...
 - git commit -m "T22: Fixed tests broken by refactoring"
+- Integration testing: new game functionality, collect item functionality
 
+14:20 Baby waking up early today
+- Continue with end-to-end integration testing this evening
+
+19:30 T22 - Integration testing
+- Added tests for testing that button presses in gamezone has desired effect on scoreboard
+- Added tests for testing new game functionality
+- Refactored test values into separate folder and load from there
+- Renamed scoreboardLang.plyerItems to scoreboardHeading
+- git commit -m "T22: Added integration tests for collectable item collection and new game functionality.  Refactored test values into separate folder for all tests to share.  Renamed scoreboardLang.plyerItems to scoreboardHeading as it is a better name.  Updated task list."
 
 

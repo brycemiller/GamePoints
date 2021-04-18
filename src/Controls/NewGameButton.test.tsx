@@ -1,34 +1,29 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import NewGameButton from './NewGameButton';
-
-const newGameButtonId = 'test-id';
-const newGameButtonLabel = 'test-label';
-const newGameButton: Controls.INewGameButton = {
-    id: newGameButtonId,
-    label: newGameButtonLabel,
-  }
-
-let resetGameCalled: Boolean = false;
-const resetGame = () => resetGameCalled = true;
+import { newGameButton } from '../TestHelpers/testValues';
 
 test('button renders', () => {
+    const handleClick = jest.fn();
+
     render (
-        <NewGameButton newGameButton={newGameButton} onNewGame={resetGame} />
+        <NewGameButton newGameButton={newGameButton} onNewGame={handleClick} />
     );
 
-    const button = screen.getByText(newGameButtonLabel);
+    const button = screen.getByText(newGameButton.label);
     expect(button).toBeInTheDocument();
 });
 
 test('button click event is handled using custom function', () => {
+    const handleClick = jest.fn();
+
     render (
-        <NewGameButton newGameButton={newGameButton} onNewGame={resetGame} />
+        <NewGameButton newGameButton={newGameButton} onNewGame={handleClick} />
     );
 
-    const button = screen.getByText(newGameButtonLabel);
+    const button = screen.getByText(newGameButton.label);
     expect(button).toBeInTheDocument();
 
-    fireEvent.click(button);
-    expect(resetGameCalled).toBeTruthy();
+    fireEvent.click(button, handleClick);
+    expect(handleClick).toHaveBeenCalledTimes(1);
 });

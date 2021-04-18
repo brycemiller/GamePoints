@@ -1,7 +1,6 @@
 import React from 'react';
 import GameZone from '../GameZone/GameZone';
 import HelperFactory from '../Helpers/HelperFactory';
-import POINTS_SCHEME from '../pointsScheme.json';
 import Scoreboard from '../Scoreboard/Scoreboard';
 import { Game } from './types';
 import './Game.css';
@@ -32,7 +31,7 @@ React.Component<Game.IGameProps, Game.IGameState> {
             
             newGameButton: props.newGameButton,
 
-            pointsCalculator: HelperFactory.PointsCalculator(POINTS_SCHEME),
+            pointsCalculator: HelperFactory.PointsCalculator(props.pointsScheme),
         }
     }
 

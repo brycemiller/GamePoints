@@ -1,39 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import GameZone from './GameZone';
-
-const collectableItemId = 'test-id-';
-const collectableItemLabel = 'test-label-';
-const collectableItems: CollectableItem.ICollectableItem[] = [
-    {
-        id: collectableItemId+'A',
-        label: collectableItemLabel+'A',
-        color: 'blue',
-    },
-    {
-        id: collectableItemId+'B',
-        label: collectableItemLabel+'B',
-        color: 'green',
-    },
-    {
-        id: collectableItemId+'C',
-        label: collectableItemLabel+'C',
-        color: 'red',
-    },
-    {
-        id: collectableItemId+'D',
-        label: collectableItemLabel+'D',
-        color: 'yellow',
-    },
-];
-
-const onCollectItem = () => { return; }
-
-const logoURL = "kahoot-logo.svg";
-const gameZoneLang: GameZone.IGameZoneLang = {
-    gameName: "Points",
-    logoAltText: "Kahoot!",
-}
+import { collectableItems,
+    gameZoneLang,
+    logoURL,
+    onCollectItem,
+} from '../TestHelpers/testValues';
 
 test('game zone renders', () => {
     render (
@@ -64,8 +36,8 @@ test('all collectable items rendered', () => {
 test('one collectable item rendered', () => {
     const oneCollectableItem: CollectableItem.ICollectableItem[] = [
         {
-            id: collectableItemId+'Z',
-            label: collectableItemLabel+'Z',
+            id: 'Z',
+            label: 'Z',
             color: 'yellow',
         },
     ];

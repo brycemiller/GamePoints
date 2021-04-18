@@ -19,7 +19,7 @@ React.Component<Scoreboard.IScoreboardProps, Scoreboard.IScoreboardState> {
     render() {
         return (
             <><div className="scoreboard">
-                <div className="header">{this.state.scoreboardLang.playerItems}</div>
+                <div className="header">{this.state.scoreboardLang.scoreboardHeading}</div>
                 <ScoreboardItemList
                     scoreboardItems={this.props.scoreboardItems}
                     lang={this.state.scoreboardLang.scoreboardItemListLang}/>
