@@ -8,7 +8,7 @@ To run the application, you will need Node and Yarn installed on your machine.
 ## Installation
 Run the following commands:
 
-git clone https://github.com/brycemiller/GamePoints.git\
+git clone https://github.com/brycemiller/GamePoints.git \
 cd GamePoints\
 yarn install
 

@@ -192,4 +192,5 @@
 - Commented on App files
 - Updated read-me
 - git commit -m "T21: Reviewed, commented, and tidied up code.  Updated read-me file."
+- git commit -m "T21: Fixed minor formatting issue in read-me file."
 
