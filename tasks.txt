@@ -21,4 +21,4 @@ T17 - Sanity checks for negative numbers, etc
 +T20 - Move score calculation code out into own class
 +T21 - Review own code and add comments, clean-up, etc
 +T22 - Make outstanding tests and integration tests
-T23 - Styling of points table still a bit buggy - tbody should scroll
++T23 - Styling of points table still a bit buggy - tbody should scroll

@@ -13,16 +13,33 @@
     border-bottom: 1px solid rgb(51, 51, 51);
 }
 
-.scoreboard > table {
+.scoreboard > .header {
+    padding: 10px 0px;
+}
+
+.scoreboard > div.scoreboardItemList {
+    height: 505px;
+    overflow-y: scroll;
+}
+
+.scoreboard > div.scoreboardItemList > table {
     border-spacing: 20px 15px;
     width: 100%;
 }
 
-.scoreboard > table > tbody > tr > td {
+.scoreboard > div.scoreboardItemList > table > thead > tr > th {
+    /* Make table heading stick to top, even on scroll
+       Will not work in IE, but IE currently < 1% of global usage */
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+.scoreboard > div.scoreboardItemList > table > tbody > tr > td {
     width: 33%;
 }
 
-.scoreboard > table > tbody > tr.scoreboarditem > td.label > span {
+.scoreboard > div.scoreboardItemList > table > tbody > tr.scoreboarditem > td.label > span {
     /* Make item label look like collectable item button */
     border-color: rgb(118, 118, 118);
     border-radius: 4px;
@@ -37,14 +54,13 @@
     vertical-align: middle;
 }
 
-.scoreboard > table > tbody > tr.scoreboarditem > td.label > span:hover {
+.scoreboard > div.scoreboardItemList > table > tbody > tr.scoreboarditem > td.label > span:hover {
     /* Make item label look like collectable item button */
     box-shadow: rgb(0 0 0 / 25%) 0px -2px inset;
 }
 
 .scoreboard > .scoreboardBonusTotalizer {
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px 0px;
     text-align: left;
 }
 

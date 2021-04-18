@@ -18,12 +18,12 @@ React.Component<Scoreboard.IScoreboardItemListProps, Scoreboard.IScoreboardItemL
 
     render() {
         return (
-            <table>
+            <div className="scoreboardItemList"><table>
                 <thead>
                     <tr>
-                        <td>{this.state.lang.item}</td>
-                        <td>{this.state.lang.quantity}</td>
-                        <td>{this.state.lang.score}</td>
+                        <th>{this.state.lang.item}</th>
+                        <th>{this.state.lang.quantity}</th>
+                        <th>{this.state.lang.score}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@ React.Component<Scoreboard.IScoreboardItemListProps, Scoreboard.IScoreboardItemL
                                 score={scoreboardItem.score} />
                     ))}
                 </tbody>
-            </table>
+            </table></div>
         );
     }
 }
