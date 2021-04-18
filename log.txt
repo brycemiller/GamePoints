@@ -166,4 +166,9 @@
 - Renamed scoreboardLang.plyerItems to scoreboardHeading
 - git commit -m "T22: Added integration tests for collectable item collection and new game functionality.  Refactored test values into separate folder for all tests to share.  Renamed scoreboardLang.plyerItems to scoreboardHeading as it is a better name.  Updated task list."
 
+22:15 T23 - Small CSS improvements
+- Added border style on focus for enhanced accessibility
+- Made table take up all available space
+- Adjust bonus and total margins
+- git commit -m "T23: Added button focus style for enhanced accessibility.  Minor adjustments to table width, and bonus and total margins"
 
