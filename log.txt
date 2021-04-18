@@ -142,6 +142,7 @@
 - git commit -m "Added new tasks to task list for extracting the score calculation code, making outstanding tests, and code clean-up"
 - Sort scoreboard items by points, quanity, and then alphabetically for a more exciting user experience
 - git commit -m "T13: Added sorting of scorebaord items when score is updated"
+- git commit -m "T18: Added padding to left of header to match Kahoot website; improved collectabel item representation in scoreboard with border matching button representation in gamezone"
 
 
 

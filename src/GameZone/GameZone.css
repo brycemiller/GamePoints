@@ -5,6 +5,10 @@
     width: 60%;
 }
 
+.gameZone > header {
+    padding-left: 24px;
+}
+
 .gameZone > header > img {
     margin: 0px 15px 0px 0px;
     width: 6rem;
