@@ -172,3 +172,7 @@
 - Adjust bonus and total margins
 - git commit -m "T23: Added button focus style for enhanced accessibility.  Minor adjustments to table width, and bonus and total margins"
 
+22:20 T14 - Get game settings/props
+- Just like with test, refactor game settings into own settings file
+- git commit -m "T14: Moved game settings to own settings file"
+
