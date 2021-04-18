@@ -1,3 +1,5 @@
+import PointsCalculator from "../Helpers/PointsCalculator";
+
 declare namespace Game {
     interface IBonusPointsScheme {
         amount: number,
@@ -35,6 +37,6 @@ declare namespace Game {
         
         newGameButton: Controls.INewGameButton,
 
-        pointsScheme: IPointsScheme[],
+        pointsCalculator: Helpers.IPointsCalculator,
     }
 }

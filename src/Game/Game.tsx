@@ -1,9 +1,12 @@
 import React from 'react';
 import GameZone from '../GameZone/GameZone';
+import HelperFactory from '../Helpers/HelperFactory';
+import POINTS_SCHEME from '../pointsScheme.json';
 import Scoreboard from '../Scoreboard/Scoreboard';
+import { Game } from './types';
 import './Game.css';
 
-export default class Game extends
+export default class GameClass extends
 React.Component<Game.IGameProps, Game.IGameState> {
     constructor(props: Game.IGameProps) {
         super(props);
@@ -16,7 +19,8 @@ React.Component<Game.IGameProps, Game.IGameState> {
             scoreboardLang: props.scoreboardLang,
 
             // Build scoreboard items array from collectable items specified
-            scoreboardItems: props.collectableItems.map(collectableItem => {
+            scoreboardItems: props.collectableItems.map(
+                (collectableItem: CollectableItem.ICollectableItem) => {
                 return {
                     collectableItem: collectableItem,
                     quantity: 0,
@@ -28,14 +32,14 @@ React.Component<Game.IGameProps, Game.IGameState> {
             
             newGameButton: props.newGameButton,
 
-            pointsScheme: require('../pointsScheme.json'),
+            pointsCalculator: HelperFactory.PointsCalculator(POINTS_SCHEME),
         }
     }
 
     onCollectItem = (collectedItem: CollectableItem.ICollectableItem): void => {
         this.updateScoreboardItems(collectedItem);
-        this.updateTotal(collectedItem);
-        this.updateBonusTotal(collectedItem);
+        this.updateTotal();
+        this.updateBonusTotal();
     }
 
     onNewGame = (): void => {
@@ -45,7 +49,8 @@ React.Component<Game.IGameProps, Game.IGameState> {
     }
 
     resetScoreboardItems(): void {
-        this.state.scoreboardItems.forEach(scoreboardItem => {
+        this.state.scoreboardItems.forEach(
+            (scoreboardItem: Scoreboard.IScoreboardItem) => {
             scoreboardItem.quantity = 0;
             scoreboardItem.score = 0;
         });
@@ -59,62 +64,24 @@ React.Component<Game.IGameProps, Game.IGameState> {
         this.setState({bonusTotal: 0});
     }
 
-    getPointsSchemeForCollectableItem(collectableItem: CollectableItem.ICollectableItem)
-        : Game.IPointsScheme | undefined {
-        return this.state.pointsScheme
-            .filter(pointsScheme => pointsScheme.id === collectableItem.id)
-            .shift();
-    }
-
-    
-    /**
-     * Calculates the total score, including bonuses, for a given quantity and a
-     * given points scheme.
-     * 
-     * The bonus amount is defined in terms of total points for a group of X items.
-     *
-     * To calculate the new total, we need to know the number of bonus groupings,
-     * and the number of items remaining.
-     *
-     * We multiply each of these by their respective values, and sum them together
-     * to get the new score.
-     */
-    calculateScoreForQuantity(pointsScheme: Game.IPointsScheme, quantity: number): number {
-        const unitPoints = pointsScheme.unitPoints;
-        const bonusAmount = pointsScheme.bonusPoints.amount;
-        const bonusPer = pointsScheme.bonusPoints.per;
-
-        const numBonusGroups = bonusPer > 0 ? Math.floor(quantity / bonusPer) : 0;
-        const remainder = bonusPer > 0 ? quantity % bonusPer : quantity;
-
-        return (numBonusGroups * bonusAmount) + (remainder * unitPoints);
-    }
-
-    updateTotal(collectedItem: CollectableItem.ICollectableItem): void {
+    updateTotal(): void {
         const newTotal = this.state.scoreboardItems
-            .map(scoreboardItem => scoreboardItem.score)
-            .reduce((sum, currentTotal) => sum + currentTotal);
+            .map((scoreboardItem: Scoreboard.IScoreboardItem) => scoreboardItem.score)
+            .reduce((sum: number, currentTotal: number) => sum + currentTotal);
 
         this.setState({total: newTotal});
     }
 
-    updateBonusTotal(collectedItem: CollectableItem.ICollectableItem): void {
-        let newBonusTotal = 0;
-
-        this.state.scoreboardItems.forEach(scoreboardItem => {
-            const pointsScheme = this.getPointsSchemeForCollectableItem(scoreboardItem.collectableItem);
-
-            if (pointsScheme !== undefined) {
-                newBonusTotal +=
-                    (scoreboardItem.score - (scoreboardItem.quantity * pointsScheme.unitPoints));
-            }
-        });
+    updateBonusTotal(): void {
+        const newBonusTotal = this.state.pointsCalculator
+            .calculateBonusTotal(this.state.scoreboardItems);
 
         this.setState({bonusTotal: newBonusTotal});
     }
 
     sortScoreboardItems(): void {
-        this.state.scoreboardItems.sort((a, b) => {
+        this.state.scoreboardItems.sort(
+            (a: Scoreboard.IScoreboardItem, b: Scoreboard.IScoreboardItem) => {
             // First sort by score
             if (a.score < b.score)
                 return 1;
@@ -143,7 +110,8 @@ React.Component<Game.IGameProps, Game.IGameState> {
     updateScoreboardItems(collectedItem: CollectableItem.ICollectableItem): void {
         // Get correct item
         const scoreboardItem = this.state.scoreboardItems
-            .filter(scoreboardItem => scoreboardItem.collectableItem.id === collectedItem.id)
+            .filter((scoreboardItem: Scoreboard.IScoreboardItem) =>
+                scoreboardItem.collectableItem.id === collectedItem.id)
             .shift();
 
         if (scoreboardItem === undefined)
@@ -151,7 +119,8 @@ React.Component<Game.IGameProps, Game.IGameState> {
 
         // Get points scheme for item
         const collectableItemPointsScheme =
-            this.getPointsSchemeForCollectableItem(collectedItem);
+            this.state.pointsCalculator
+                .getPointsSchemeForCollectableItem(collectedItem);
 
         if (collectableItemPointsScheme === undefined) {
             // No points scheme, so just update quantity collected and propagate
@@ -159,14 +128,10 @@ React.Component<Game.IGameProps, Game.IGameState> {
             return;
         }
 
-        // Calculate points
-        const newQuantity = scoreboardItem.quantity + 1;
-        const newScore = this.calculateScoreForQuantity(
-            collectableItemPointsScheme, newQuantity)
-
         // Update scoreboard item
-        scoreboardItem.quantity = newQuantity;
-        scoreboardItem.score = newScore
+        scoreboardItem.quantity += 1;
+        scoreboardItem.score = this.state.pointsCalculator
+            .calculateScoreForScoreboardItem(scoreboardItem);
 
         this.sortScoreboardItems();
     }
