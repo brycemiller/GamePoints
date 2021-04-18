@@ -10,10 +10,9 @@ React.Component<Game.IGameProps, Game.IGameState> {
         this.state = {
             collectableItems: props.collectableItems,
 
-            gameName: props.gameName,
-            logoAltText: props.logoAltText,
             logoURL: props.logoURL,
 
+            gameZoneLang: props.gameZoneLang,
             scoreboardLang: props.scoreboardLang,
 
             scoreboardItems: props.scoreboardItems,
@@ -169,8 +168,7 @@ React.Component<Game.IGameProps, Game.IGameState> {
         return (
             <><GameZone collectableItems={this.state.collectableItems}
                 onCollectItem={this.onCollectItem}
-                gameName={this.state.gameName}
-                logoAltText={this.state.logoAltText}
+                lang={this.state.gameZoneLang}
                 logoURL={this.state.logoURL} />
             <Scoreboard scoreboardLang={this.state.scoreboardLang}
                 scoreboardItems={this.state.scoreboardItems}

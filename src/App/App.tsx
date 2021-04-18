@@ -26,8 +26,10 @@ const collectableItems: CollectableItem.ICollectableItem[] = [
   },
 ];
 
-const gameName = "Points";
-const logoAltText = "Kahoot!";
+const gameZoneLang: GameZone.IGameZoneLang = {
+  gameName: "Points",
+  logoAltText: "Kahoot!",
+}
 const logoURL = "kahoot-logo.svg";
 
 const scoreboardItems: Scoreboard.IScoreboardItem[] = [
@@ -83,8 +85,7 @@ const scoreboardLang: Scoreboard.IScoreboardLang = {
 function App() {
   return (
     <><Game collectableItems={collectableItems}
-        gameName={gameName}
-        logoAltText={logoAltText}
+        gameZoneLang={gameZoneLang}
         logoURL={logoURL}
         scoreboardLang={scoreboardLang}
         scoreboardItems={scoreboardItems}

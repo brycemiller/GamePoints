@@ -9,8 +9,8 @@ React.Component<GameZone.IGameZoneProps, GameZone.IGameZoneState> {
         this.state = {
             collectableItems:  props.collectableItems,
             onCollectItem: props.onCollectItem,
-            gameName: props.gameName,
-            logoAltText: props.logoAltText,
+            gameName: props.lang.gameName,
+            logoAltText: props.lang.logoAltText,
             logoURL: props.logoURL,
         }
     }

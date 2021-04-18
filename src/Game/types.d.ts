@@ -13,10 +13,9 @@ declare namespace Game {
     interface IGameProps {
         collectableItems: CollectableItem.ICollectableItem[],
 
-        gameName: string,
-        logoAltText: string,
         logoURL: string,
 
+        gameZoneLang: GameZone.IGameZoneLang,
         scoreboardLang: Scoreboard.IScoreboardLang,
 
         scoreboardItems: Scoreboard.IScoreboardItem[],
@@ -27,10 +26,9 @@ declare namespace Game {
     interface IGameState {
         collectableItems: CollectableItem.ICollectableItem[],
 
-        gameName: string,
-        logoAltText: string,
         logoURL: string,
 
+        gameZoneLang: GameZone.IGameZoneLang,
         scoreboardLang: Scoreboard.IScoreboardLang,
 
         scoreboardItems: Scoreboard.IScoreboardItem[],
