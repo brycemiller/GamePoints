@@ -138,6 +138,9 @@
 - git commit -m "Added new task to task list for making scoreboard items from collectable items passed in"
 - git commit -m "Fixed tests after all that refactoring..."
 
+12:05 Some finesse
+- git commit -m "Added new tasks to task list for extracting the score calculation code, making outstanding tests, and code clean-up"
+
 
 
 
