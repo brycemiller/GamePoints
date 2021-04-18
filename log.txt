@@ -201,3 +201,4 @@
 - Bonus total doesn't work with negative bonus amount; only allow positive integers
 - Found code comments in html from create react app; removing
 - git commit -m "T21: Removed some unneeded generated code."
+- git commit -m "T17: Added checks for negative numbers in points schemes"

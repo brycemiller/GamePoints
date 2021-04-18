@@ -11,6 +11,26 @@ export default class PointsCalculator implements Helpers.IPointsCalculator {
     private pointsSchemes: Game.IPointsScheme[];
 
     constructor(pointsSchemes: Game.IPointsScheme[]) {
+        pointsSchemes.forEach((pointsScheme: Game.IPointsScheme): void => {
+            pointsScheme.unitPoints = pointsScheme.unitPoints >= 0
+                ? pointsScheme.unitPoints
+                : 0;
+            pointsScheme.bonusPoints.amount = pointsScheme.bonusPoints.amount >= 0
+                ? pointsScheme.bonusPoints.amount
+                : 0;
+            pointsScheme.bonusPoints.per = pointsScheme.bonusPoints.per >= 0
+                ? pointsScheme.bonusPoints.per
+                : 0;
+
+            /**
+             * If bonus amount is not greater than 0, then it doesn't make sense
+             * to award points per item, so set per to 0 here as well
+             */
+            pointsScheme.bonusPoints.per = pointsScheme.bonusPoints.amount > 0
+                ? pointsScheme.bonusPoints.per
+                : 0;
+        });
+
         this.pointsSchemes = pointsSchemes;
     }
 
