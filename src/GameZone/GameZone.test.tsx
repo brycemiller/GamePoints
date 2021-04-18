@@ -1,11 +1,11 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import GameZone from './GameZone';
-import { collectableItems,
+import {
+    collectableItems,
     gameZoneLang,
     logoURL,
-    onCollectItem,
-} from '../TestHelpers/testValues';
+    onCollectItem
+} from '../TestHelpers/testSettings';
+import GameZone from './GameZone';
 
 test('game zone renders', () => {
     render (
@@ -15,6 +15,7 @@ test('game zone renders', () => {
             logoURL={logoURL} />
     );
 
+    // Ensure game name label is rendered
     const gameZone = screen.getByText(gameZoneLang.gameName + '.');
     expect(gameZone).toBeInTheDocument();
 });
@@ -27,6 +28,7 @@ test('all collectable items rendered', () => {
             logoURL={logoURL} />
     );
 
+    // Ensure the label for each collectable item is rendered
     collectableItems.map(collectableItem => {
         const collectableItemButton = screen.getByText(collectableItem.label);
         expect(collectableItemButton).toBeInTheDocument();
@@ -49,6 +51,7 @@ test('one collectable item rendered', () => {
             logoURL={logoURL} />
     );
 
+    // Ensure the label for the collectable item is rendered
     oneCollectableItem.map(collectableItem => {
         const collectableItemButton = screen.getByText(collectableItem.label);
         expect(collectableItemButton).toBeInTheDocument();

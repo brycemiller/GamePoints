@@ -1,5 +1,10 @@
+/**
+ * Styles for GameZone section.
+ */
 .gameZone {
     float: left;
+    /* GameZone should take up entire vertical space, but on an iPad
+       there is a padding 8px which is unavailable */
     height: 97vh;
     overflow: hidden;
     width: 60%;
@@ -14,6 +19,7 @@
     width: 6rem;
 }
 
+/* Collectable items are renderd in main */
 .gameZone > main {
     height: inherit;
     overflow-y: scroll;

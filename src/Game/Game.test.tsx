@@ -1,33 +1,17 @@
-import React from 'react';
-import { fireEvent, Nullish, render, screen, wait } from '@testing-library/react';
-import Game from './Game';
-import { collectableItems,
+import { fireEvent, render, screen } from '@testing-library/react';
+import POINTS_SCHEME from '../TestHelpers/pointsScheme.json';
+import { getByTextWithMarkup } from '../TestHelpers/testHelpers';
+import {
+    collectableItems,
     gameName,
     gameZoneLang,
     logoURL,
     newGameButton,
-    scoreboardItemListLang,
+    scoreboardBonusTotalizerLang, scoreboardItemListLang,
     scoreboardLang,
-    scoreboardBonusTotalizerLang,
-    scoreboardTotalLang,
-} from '../TestHelpers/testValues';
-import POINTS_SCHEME from '../TestHelpers/pointsScheme.json';
-
-/**
- * Solution to finding text separated by tags found here:
- * https://stackoverflow.com/a/56859650
- */
-const getByTextWithMarkup = (text: string) => 
-    (_: string, node: Nullish<Element>): boolean => {
-        const hasText = (node: Nullish<Element>): boolean => node?.textContent === text;
-        const nodeHasText = hasText(node);
-        const children = node?.children === undefined ? new HTMLCollection() : node.children;
-        const childrenDontHaveText = Array.from(children).every(
-            child => !hasText(child)
-        );
-
-        return nodeHasText && childrenDontHaveText;
-    };
+    scoreboardTotalLang
+} from '../TestHelpers/testSettings';
+import Game from './Game';
 
 test('gamezone renders', () => {
     render (
@@ -39,6 +23,7 @@ test('gamezone renders', () => {
             pointsScheme={POINTS_SCHEME} />
     );
 
+    // Ensure game name label is rendered
     const gameZone = screen.getByText(gameName + '.');
     expect(gameZone).toBeInTheDocument();
 });
@@ -53,21 +38,27 @@ test('scoreboard renders', () => {
             pointsScheme={POINTS_SCHEME} />
     );
 
+    // Ensure scoreboard item heading is rendered
     const scoreboardItemListItemHeading = screen.getByText(scoreboardItemListLang.item);
     expect(scoreboardItemListItemHeading).toBeInTheDocument();
 
+    // Ensure scoreboard quntity heading is rendered
     const scoreboardItemListQuantityHeading = screen.getByText(scoreboardItemListLang.quantity);
     expect(scoreboardItemListQuantityHeading).toBeInTheDocument();
 
+    // Ensure scoreboard score heading is rendered
     const scoreboardItemListScoreHeading = screen.getByText(scoreboardItemListLang.score);
     expect(scoreboardItemListScoreHeading).toBeInTheDocument();
 
+    // Ensure scoreboard bonus label is rendered
     const scoreboardbonusTotalizerBonusLabel = screen.getByText(scoreboardBonusTotalizerLang.bonus);
     expect(scoreboardbonusTotalizerBonusLabel).toBeInTheDocument();
 
+    // Ensure scoreboard total label is rendered
     const scoreboardbonusTotalLabel = screen.getByText(scoreboardTotalLang.total);
     expect(scoreboardbonusTotalLabel).toBeInTheDocument();
 
+    // Ensure new game button is rendered
     const button = screen.getByText(newGameButton.label);
     expect(button).toBeInTheDocument();
 });

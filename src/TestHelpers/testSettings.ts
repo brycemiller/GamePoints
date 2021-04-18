@@ -1,23 +1,27 @@
+/**
+ * This file contains all the test settings for the application.
+ * These value are passed into the components by the tests.
+ */
 export const collectableItems: CollectableItem.ICollectableItem[] = [
     {
+        color: 'blue',
         id: 'A',
         label: 'A',
-        color: 'blue',
     },
     {
+        color: 'green',
         id: 'B',
         label: 'B',
-        color: 'green',
     },
     {
+        color: 'red',
         id: 'C',
         label: 'C',
-        color: 'red',
     },
     {
+        color: 'yellow',
         id: 'D',
         label: 'D',
-        color: 'yellow',
     },
 ];
 
@@ -45,10 +49,10 @@ export const scoreboardTotalLang: Scoreboard.IScoreboardTotalLang = {
 }
 
 export const scoreboardLang: Scoreboard.IScoreboardLang = {
-    scoreboardItemListLang: scoreboardItemListLang,
     scoreboardBonusTotalizerLang: scoreboardBonusTotalizerLang,
-    scoreboardTotalLang: scoreboardTotalLang,
     scoreboardHeading: 'Player Items',
+    scoreboardItemListLang: scoreboardItemListLang,
+    scoreboardTotalLang: scoreboardTotalLang,
 }
 
 export const scoreboardItems: Scoreboard.IScoreboardItem[] = [

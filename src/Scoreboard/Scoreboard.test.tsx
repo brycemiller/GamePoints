@@ -1,16 +1,15 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Scoreboard from './Scoreboard';
-import { newGameButton,
+import {
+    newGameButton,
     onNewGame,
-    scoreboardItemListLang,
+    scoreboardBonusTotal,
+    scoreboardBonusTotalizerLang, scoreboardItemListLang,
     scoreboardItems,
     scoreboardLang,
-    scoreboardBonusTotal,
-    scoreboardBonusTotalizerLang,
     scoreboardTotal,
-    scoreboardTotalLang,
-} from '../TestHelpers/testValues';
+    scoreboardTotalLang
+} from '../TestHelpers/testSettings';
+import Scoreboard from './Scoreboard';
 
 test('scoreboard header renders', () => {
     render (
@@ -22,6 +21,7 @@ test('scoreboard header renders', () => {
             onNewGame={onNewGame} />
     );
 
+    // Ensure heading label is rendered
     const scoreboardHeading = screen.getByText(scoreboardLang.scoreboardHeading);
     expect(scoreboardHeading).toBeInTheDocument();
 });
@@ -36,12 +36,15 @@ test('scoreboard item list renders', () => {
             onNewGame={onNewGame} />
     );
 
+    // Ensure item heading is rendered
     const scoreboardItemListItemHeading = screen.getByText(scoreboardItemListLang.item);
     expect(scoreboardItemListItemHeading).toBeInTheDocument();
 
+    // Ensure quantity heading is rendered
     const scoreboardItemListQuantityHeading = screen.getByText(scoreboardItemListLang.quantity);
     expect(scoreboardItemListQuantityHeading).toBeInTheDocument();
 
+    // Ensure score heading is rendered
     const scoreboardItemListScoreHeading = screen.getByText(scoreboardItemListLang.score);
     expect(scoreboardItemListScoreHeading).toBeInTheDocument();
 });
@@ -56,9 +59,11 @@ test('scoreboard bonus totalizer renders', () => {
             onNewGame={onNewGame} />
     );
 
+    // Ensure bonus label is rendered
     const scoreboardbonusTotalizerBonusLabel = screen.getByText(scoreboardBonusTotalizerLang.bonus);
     expect(scoreboardbonusTotalizerBonusLabel).toBeInTheDocument();
 
+    // Ensure bonus value is rendered
     const scoreboardbonusTotalizerBonusTotal = screen.getByText(scoreboardBonusTotal);
     expect(scoreboardbonusTotalizerBonusTotal).toBeInTheDocument();
 });
@@ -73,9 +78,11 @@ test('scoreboard total renders', () => {
             onNewGame={onNewGame} />
     );
 
+    // Ensure total label is rendered
     const scoreboardbonusTotalTotalLabel = screen.getByText(scoreboardTotalLang.total);
     expect(scoreboardbonusTotalTotalLabel).toBeInTheDocument();
 
+    // Ensure total value is rendered
     const scoreboardbonusTotalTotalValue = screen.getByText(scoreboardTotal);
     expect(scoreboardbonusTotalTotalValue).toBeInTheDocument();
 });
@@ -90,6 +97,7 @@ test('new game control renders', () => {
             onNewGame={onNewGame} />
     );
 
+    // Ensure new game button label is rendered
     const button = screen.getByText(newGameButton.label);
     expect(button).toBeInTheDocument();
 });

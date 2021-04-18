@@ -1,23 +1,27 @@
+/**
+ * This file contains all the settings for the App.
+ * These value are passed into the Game component by the App.
+ */
 export const collectableItems: CollectableItem.ICollectableItem[] = [
   {
+    color: "red",
     id: 'A',
     label: 'A',
-    color: "red",
   },
   {
+    color: "blue",
     id: 'B',
     label: 'B',
-    color: "blue",
   },
   {
+    color: "green",
     id: 'C',
     label: 'C',
-    color: "green",
   },
   {
+    color: "yellow",
     id: 'D',
     label: 'D',
-    color: "yellow",
   },
 ];
 
@@ -48,9 +52,8 @@ export const newGameButton: Controls.INewGameButton = {
 }
 
 export const scoreboardLang: Scoreboard.IScoreboardLang = {
-  scoreboardItemListLang: scoreboardItemListLang,
   scoreboardBonusTotalizerLang: scoreboardBonusTotalizerLang,
-  scoreboardTotalLang: scoreboardTotalLang,
-
   scoreboardHeading: "Player Items",
+  scoreboardItemListLang: scoreboardItemListLang,
+  scoreboardTotalLang: scoreboardTotalLang,
 }

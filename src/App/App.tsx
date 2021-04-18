@@ -1,11 +1,11 @@
-import React from 'react';
 import Game from '../Game/Game';
 import POINTS_SCHEME from '../pointsScheme.json';
-import { collectableItems,
+import {
+  collectableItems,
   gameZoneLang,
   logoURL,
   newGameButton,
-  scoreboardLang,
+  scoreboardLang
 } from '../settings';
 import './App.css';
 

@@ -1,3 +1,7 @@
+/**
+ * Styling common to elements across application
+ * These styles are based on those used by create.kahoot.it
+ */
 body {
     color: rgb(70,23,143);
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;

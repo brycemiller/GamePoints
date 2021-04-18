@@ -176,3 +176,20 @@
 - Just like with test, refactor game settings into own settings file
 - git commit -m "T14: Moved game settings to own settings file"
 
+22:30 T21 - Review own code and add comments, clean-up, etc
+- Minor whitespace change on PointsCalculator
+- Added comments to settings file
+- Moved matcher function from test to testHelpers file
+- Renamed testValues to testSettings and commented
+- Removed unused imports
+- Sorted interface members alphabetically
+- Commented Scoreboard files
+- Commented Helpers files
+- Commented GameZone files
+- Commented Game files
+- Commented Controls files
+- Commented CollectableItem files
+- Commented on App files
+- Updated read-me
+- git commit -m "T21: Reviewed, commented, and tidied up code.  Updated read-me file."
+

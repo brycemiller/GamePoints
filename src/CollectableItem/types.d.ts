@@ -1,8 +1,8 @@
 declare namespace CollectableItem {
     interface ICollectableItem {
+        color: Color;
         id: string;
         label: string;
-        color: Color;
     }
 
     interface ICollectableItemProps {
@@ -11,12 +11,12 @@ declare namespace CollectableItem {
     }
     
     interface ICollectableItemState {
+        color: Color;
         id: string;
         label: string;
-        color: Color;
         onCollectItem: OnCollectItem;
     }
 
-    type OnCollectItem = (collectedItem: Collectable) => void;
     type Color = "blue" | "green" | "red" | "yellow";
+    type OnCollectItem = (collectedItem: Collectable) => void;
 }

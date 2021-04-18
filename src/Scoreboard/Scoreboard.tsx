@@ -5,14 +5,17 @@ import ScoreboardItemList from '../Scoreboard/ScoreboardItemList';
 import ScoreboardTotal from '../Scoreboard/ScoreboardTotal';
 import './Scoreboard.css';
 
+/**
+ * A class for rendering the entire scoreboard section.
+ */
 export default class Scoreboard extends
 React.Component<Scoreboard.IScoreboardProps, Scoreboard.IScoreboardState> {
     constructor(props: Scoreboard.IScoreboardProps) {
         super(props);
         this.state = {
-            scoreboardLang: props.scoreboardLang,
             newGameButton: props.newGameButton,
             onNewGame: props.onNewGame,
+            scoreboardLang: props.scoreboardLang,
         }
     }
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import './Scoreboard.css';
 
+/**
+ * A class for displaying the total bonus on the scoreboard.
+ */
 export default class ScoreboardBonusTotalizer extends
 React.Component<Scoreboard.IScoreboardBonusTotalizerProps, Scoreboard.IScoreboardBonusTotalizerState> {
     constructor(props: Scoreboard.IScoreboardBonusTotalizerProps) {

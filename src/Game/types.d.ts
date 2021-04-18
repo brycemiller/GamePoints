@@ -2,43 +2,34 @@ import PointsCalculator from "../Helpers/PointsCalculator";
 
 declare namespace Game {
     interface IBonusPointsScheme {
-        amount: number,
-        per: number,
+        amount: number;
+        per: number;
     }
 
     interface IPointsScheme {
-        id: string,
-        unitPoints: number,
-        bonusPoints: IBonusPointsScheme,
+        id: string;
+        bonusPoints: IBonusPointsScheme;
+        unitPoints: number;
     }
 
     interface IGameProps {
-        collectableItems: CollectableItem.ICollectableItem[],
-
-        logoURL: string,
-
-        gameZoneLang: GameZone.IGameZoneLang,
-        scoreboardLang: Scoreboard.IScoreboardLang,
-
-        newGameButton: Controls.INewGameButton,
-
-        pointsScheme: Game.IPointsScheme[],
+        collectableItems: CollectableItem.ICollectableItem[];
+        gameZoneLang: GameZone.IGameZoneLang;
+        logoURL: string;
+        newGameButton: Controls.INewGameButton;
+        pointsScheme: Game.IPointsScheme[];
+        scoreboardLang: Scoreboard.IScoreboardLang;
     }
 
     interface IGameState {
-        collectableItems: CollectableItem.ICollectableItem[],
-
-        logoURL: string,
-
-        gameZoneLang: GameZone.IGameZoneLang,
-        scoreboardLang: Scoreboard.IScoreboardLang,
-
-        scoreboardItems: Scoreboard.IScoreboardItem[],
-        bonusTotal: number,
-        total: number,
-        
-        newGameButton: Controls.INewGameButton,
-
-        pointsCalculator: Helpers.IPointsCalculator,
+        bonusTotal: number;
+        collectableItems: CollectableItem.ICollectableItem[];
+        gameZoneLang: GameZone.IGameZoneLang;
+        logoURL: string;
+        newGameButton: Controls.INewGameButton;
+        pointsCalculator: Helpers.IPointsCalculator;
+        scoreboardItems: Scoreboard.IScoreboardItem[];
+        scoreboardLang: Scoreboard.IScoreboardLang;
+        total: number;
     }
 }

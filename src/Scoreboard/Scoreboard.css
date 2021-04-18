@@ -1,4 +1,9 @@
+/**
+ * Styles for Scoreboard section.
+ */
 .scoreboard {
+    /* Scoreboard should take up entire vertical space, but on an iPad
+       there is a padding 8px which is unavailable */
     height: 97vh;
     overflow: hidden;
     text-align: center;
@@ -18,6 +23,7 @@
 }
 
 .scoreboard > table > tbody > tr.scoreboarditem > td.label > span {
+    /* Make item label look like collectable item button */
     border-color: rgb(118, 118, 118);
     border-radius: 4px;
     border-style: outset;
@@ -25,11 +31,14 @@
     color: white;
     display: table-cell;
     height: 60px;
+    /* width was being over-ridden on smaller screen sizes, so fix
+       by setting min width */
+    min-width: 60px;
     vertical-align: middle;
-    width: 60px;
 }
 
 .scoreboard > table > tbody > tr.scoreboarditem > td.label > span:hover {
+    /* Make item label look like collectable item button */
     box-shadow: rgb(0 0 0 / 25%) 0px -2px inset;
 }
 
@@ -49,6 +58,8 @@
 }
 
 .scoreboard > .totalAndNewGameButton > .newGameButton {
+    /* Font-weight directive from App.css was not inherited,
+       so must be reiterated here */
     font-weight: bold;
     margin-top: 0px;
 }

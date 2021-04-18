@@ -1,3 +1,6 @@
+/**
+ * Types for Scoreboard section-related components
+ */
 declare namespace Scoreboard {
     interface IScoreboardItem {
         collectableItem: CollectableItem.ICollectableItem;
@@ -22,8 +25,8 @@ declare namespace Scoreboard {
     }
 
     interface IScoreboardItemListProps {
-        scoreboardItems: Scoreboard.IScoreboardItem[];
         lang: IScoreboardItemListLang;
+        scoreboardItems: Scoreboard.IScoreboardItem[];
     }
     
     interface IScoreboardItemListState {
@@ -53,13 +56,13 @@ declare namespace Scoreboard {
     }
 
     interface IScoreboardTotal {
-        total: number;
         lang: IScoreboardTotalLang;
+        total: number;
     }
 
     interface IScoreboardTotalProps {
-        total: number;
         lang: IScoreboardTotalLang;
+        total: number;
     }
 
     interface IScoreboardTotalState {
@@ -67,25 +70,24 @@ declare namespace Scoreboard {
     }
 
     interface IScoreboardLang {
-        scoreboardItemListLang: IScoreboardItemListLang,
-        scoreboardBonusTotalizerLang: IScoreboardBonusTotalizerLang,
-        scoreboardTotalLang: IScoreboardTotalLang,
-
-        scoreboardHeading: string,
+        scoreboardBonusTotalizerLang: IScoreboardBonusTotalizerLang;
+        scoreboardHeading: string;
+        scoreboardItemListLang: IScoreboardItemListLang;
+        scoreboardTotalLang: IScoreboardTotalLang;
     }
 
     interface IScoreboardProps {
-        scoreboardLang: IScoreboardLang,
-        scoreboardItems: IScoreboardItem[],
-        bonusTotal: number,
-        total: number,
-        newGameButton: Controls.INewGameButton,
-        onNewGame: Controls.OnNewGame,
+        bonusTotal: number;
+        newGameButton: Controls.INewGameButton;
+        onNewGame: Controls.OnNewGame;
+        scoreboardLang: IScoreboardLang;
+        scoreboardItems: IScoreboardItem[];
+        total: number;
     }
 
     interface IScoreboardState {
-        scoreboardLang: IScoreboardLang,
-        newGameButton: Controls.INewGameButton,
-        onNewGame: Controls.OnNewGame,
+        newGameButton: Controls.INewGameButton;
+        onNewGame: Controls.OnNewGame;
+        scoreboardLang: IScoreboardLang;
     }
 }

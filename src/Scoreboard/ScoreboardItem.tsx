@@ -1,6 +1,11 @@
 import React from 'react';
 import './Scoreboard.css';
 
+/**
+ * A class for displaying a single scoreboard item.
+ * The component displays the item label, quantity collected, and score for the item.
+ * It is rendered as a table row, to be used in ScoreboardItemList.
+ */
 export default class ScoreboardItem extends
 React.Component<Scoreboard.IScoreboardItemProps, Scoreboard.IScoreboardItemState> {
     constructor(props: Scoreboard.IScoreboardItemProps) {

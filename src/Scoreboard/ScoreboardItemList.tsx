@@ -1,7 +1,12 @@
 import React from 'react';
-import ScoreboardItem from './ScoreboardItem';
 import './Scoreboard.css';
+import ScoreboardItem from './ScoreboardItem';
 
+/**
+ * A component for displaying a list of items collected in the scoreboard section.
+ * The component displays a header, followed by the item name, quantity, and total score
+ * of each item, in a table format.
+ */
 export default class ScoreboardItemList extends
 React.Component<Scoreboard.IScoreboardItemListProps, Scoreboard.IScoreboardItemListState> {
     constructor(props: Scoreboard.IScoreboardItemListProps) {
