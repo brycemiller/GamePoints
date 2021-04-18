@@ -21,10 +21,6 @@ declare namespace Scoreboard {
         score: string;
     }
 
-    interface IScoreboardItemList {
-        lang: IScoreboardItemListLang;
-    }
-
     interface IScoreboardItemListProps {
         scoreboardItems: Scoreboard.IScoreboardItem[];
         lang: IScoreboardItemListLang;

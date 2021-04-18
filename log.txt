@@ -144,6 +144,7 @@
 - git commit -m "T13: Added sorting of scorebaord items when score is updated"
 - git commit -m "T18: Added padding to left of header to match Kahoot website; improved collectabel item representation in scoreboard with border matching button representation in gamezone"
 - git commit -m "T15: Moved gamezone strings into lang encapsulation"
+- git commit -m "T15: Removed unneeded interface for scoreboard item list and marked task as complete"
 
 
 
