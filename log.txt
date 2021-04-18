@@ -194,5 +194,10 @@
 - git commit -m "T21: Reviewed, commented, and tidied up code.  Updated read-me file."
 - git commit -m "T21: Fixed minor formatting issue in read-me file."
 
-00:20 T3 - Scoreboard styling
+00:20 T23 - Scoreboard styling
 - git commit -m "T23: Made table header sticky on scroll."
+
+00:45 T17 - Sanity checks
+- Bonus total doesn't work with negative bonus amount; only allow positive integers
+- Found code comments in html from create react app; removing
+- git commit -m "T21: Removed some unneeded generated code."
