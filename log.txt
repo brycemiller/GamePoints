@@ -152,6 +152,8 @@
 - git commit -m "T20: Refactored scoring code into own PointsCalculator helper class"
 - git commit -m "Added new task because the scoreboard CSS is still a bit buggy"
 
+13:40 T22 - Remaining test, but probably need to fix some first...
+- git commit -m "T22: Fixed tests broken by refactoring"
 
 
 

@@ -25,36 +25,12 @@ const collectableItems: CollectableItem.ICollectableItem[] = [
     },
 ];
 
-const collectCollectable =
-    (collectedCollectable: CollectableItem.ICollectableItem) => console.log(collectedCollectable);
-
 const gameName = "Points";
-const gameZoneClassName = "gameZone";
-const logoAltText = "Kahoot!";
 const logoURL = "kahoot-logo.svg";
-
-const scoreboardItems: Scoreboard.IScoreboardItem[] = [
-    {
-        collectableItem: collectableItems[0],
-        quantity: 1,
-        score: 50
-    },
-    {
-        collectableItem: collectableItems[1],
-        quantity: 2,
-        score: 90
-    },
-    {
-        collectableItem: collectableItems[2],
-        quantity: 0,
-        score: 0
-    },
-    {
-        collectableItem: collectableItems[3],
-        quantity: 0,
-        score: 0
-    },
-]
+const gameZoneLang: GameZone.IGameZoneLang = {
+    gameName: "Points",
+    logoAltText: "Kahoot!",
+}
 
 const scoreboardItemListLang: Scoreboard.IScoreboardItemListLang = {
     item: "Item",
@@ -62,12 +38,10 @@ const scoreboardItemListLang: Scoreboard.IScoreboardItemListLang = {
     score: "Score"
 }
 
-const bonusTotal = 30;
 const scoreboardBonusTotalizerLang: Scoreboard.IScoreboardBonusTotalizerLang = {
     bonus: "Bonus"
 }
 
-const total = 140;
 const scoreboardTotalLang: Scoreboard.IScoreboardTotalLang = {
     total: "Total"
 }
@@ -76,7 +50,6 @@ const newGameButton: Controls.INewGameButton = {
     id: "NewGameButton",
     label: "New Game"
 }
-const resetGame = () => console.log('Resetting game');
 
 const scoreboardLang: Scoreboard.IScoreboardLang = {
     scoreboardItemListLang: scoreboardItemListLang,
@@ -88,11 +61,9 @@ const scoreboardLang: Scoreboard.IScoreboardLang = {
 test('gamezone renders', () => {
     render (
         <Game collectableItems={collectableItems}
-            gameName={gameName}
-            logoAltText={logoAltText}
+            gameZoneLang={gameZoneLang}
             logoURL={logoURL}
             scoreboardLang={scoreboardLang}
-            scoreboardItems={scoreboardItems}
             newGameButton={newGameButton} />
     );
 
@@ -103,11 +74,9 @@ test('gamezone renders', () => {
 test('scoreboard renders', () => {
     render (
         <Game collectableItems={collectableItems}
-            gameName={gameName}
-            logoAltText={logoAltText}
+            gameZoneLang={gameZoneLang}
             logoURL={logoURL}
             scoreboardLang={scoreboardLang}
-            scoreboardItems={scoreboardItems}
             newGameButton={newGameButton} />
     );
 

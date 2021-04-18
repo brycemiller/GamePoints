@@ -8,44 +8,51 @@ const collectableItems: CollectableItem.ICollectableItem[] = [
     {
         id: collectableItemId+'A',
         label: collectableItemLabel+'A',
+        color: 'blue',
     },
     {
         id: collectableItemId+'B',
         label: collectableItemLabel+'B',
+        color: 'green',
     },
     {
         id: collectableItemId+'C',
         label: collectableItemLabel+'C',
+        color: 'red',
     },
     {
         id: collectableItemId+'D',
         label: collectableItemLabel+'D',
+        color: 'yellow',
     },
 ];
 
-const collectCollectable = () => { return; }
+const onCollectItem = () => { return; }
 
-const gameName = "Points";
-const gameZoneClassName = "gameZone";
-const logoAltText = "Kahoot!";
 const logoURL = "kahoot-logo.svg";
+const gameZoneLang: GameZone.IGameZoneLang = {
+    gameName: "Points",
+    logoAltText: "Kahoot!",
+}
 
 test('game zone renders', () => {
     render (
-        <GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
-            gameName={gameName} gameZoneClassName={gameZoneClassName}
-            logoAltText={logoAltText} logoURL={logoURL} />
+        <GameZone collectableItems={collectableItems}
+            onCollectItem={onCollectItem}
+            lang={gameZoneLang}
+            logoURL={logoURL} />
     );
 
-    const gameZone = screen.getByText(gameName + '.');
+    const gameZone = screen.getByText(gameZoneLang.gameName + '.');
     expect(gameZone).toBeInTheDocument();
 });
 
 test('all collectable items rendered', () => {
     render (
-        <GameZone collectableItems={collectableItems} collectCollectable={collectCollectable}
-            gameName={gameName} gameZoneClassName={gameZoneClassName}
-            logoAltText={logoAltText} logoURL={logoURL} />
+        <GameZone collectableItems={collectableItems}
+            onCollectItem={onCollectItem}
+            lang={gameZoneLang}
+            logoURL={logoURL} />
     );
 
     collectableItems.map(collectableItem => {
@@ -59,13 +66,15 @@ test('one collectable item rendered', () => {
         {
             id: collectableItemId+'Z',
             label: collectableItemLabel+'Z',
+            color: 'yellow',
         },
     ];
 
     render (
-        <GameZone collectableItems={oneCollectableItem} collectCollectable={collectCollectable}
-            gameName={gameName} gameZoneClassName={gameZoneClassName}
-            logoAltText={logoAltText} logoURL={logoURL} />
+        <GameZone collectableItems={oneCollectableItem}
+            onCollectItem={onCollectItem}
+            lang={gameZoneLang}
+            logoURL={logoURL} />
     );
 
     oneCollectableItem.map(collectableItem => {
