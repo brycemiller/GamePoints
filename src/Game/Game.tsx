@@ -107,6 +107,33 @@ React.Component<Game.IGameProps, Game.IGameState> {
         this.setState({bonusTotal: newBonusTotal});
     }
 
+    sortScoreboardItems(): void {
+        this.state.scoreboardItems.sort((a, b) => {
+            // First sort by score
+            if (a.score < b.score)
+                return 1;
+
+            if (a.score > b.score)
+                return -1;
+
+            // Then, by quantity
+            if (a.quantity < b.quantity)
+                return 1;
+
+            if (a.quantity > b.quantity)
+                return -1;
+
+            // Then alphabetically
+            if (a.collectableItem.label > b.collectableItem.label)
+                return 1;
+
+            if (a.collectableItem.label < b.collectableItem.label)
+                return -1;
+
+            return 0;
+        });
+    }
+
     updateScoreboardItems(collectedItem: CollectableItem.ICollectableItem): void {
         // Get correct item
         const scoreboardItem = this.state.scoreboardItems
@@ -134,6 +161,8 @@ React.Component<Game.IGameProps, Game.IGameState> {
         // Update scoreboard item
         scoreboardItem.quantity = newQuantity;
         scoreboardItem.score = newScore
+
+        this.sortScoreboardItems();
     }
 
     render() {
