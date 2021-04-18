@@ -18,6 +18,7 @@ T14 - Get game settings/props from json file
 T17 - Sanity checks for negative numbers, etc
 +T18 - Complete styling
 +T19 - Make scoreboarditems from collectable items instead of passing in
-T20 - Move score calculation code out into own class
++T20 - Move score calculation code out into own class
 T21 - Review own code and add comments, clean-up, etc
 T22 - Make outstanding tests and integration tests
+T23 - Styling of points table still a bit buggy - tbody should scroll

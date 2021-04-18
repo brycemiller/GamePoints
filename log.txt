@@ -150,6 +150,7 @@
 - git commit -m "T19: Changed scoreboard items to be based on collectable items specified for sanity reasons"
 - Remove scoring code into own helper class
 - git commit -m "T20: Refactored scoring code into own PointsCalculator helper class"
+- git commit -m "Added new task because the scoreboard CSS is still a bit buggy"
 
 
 
