@@ -202,3 +202,7 @@
 - Found code comments in html from create react app; removing
 - git commit -m "T21: Removed some unneeded generated code."
 - git commit -m "T17: Added checks for negative numbers in points schemes"
+
+01:20 T24 - Improve responsiveness of styling
+- Added breakpoints driven by content
+- git commit -m "T24: Added content-driven breakpoints for better responsiveness"

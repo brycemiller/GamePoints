@@ -22,3 +22,4 @@
 +T21 - Review own code and add comments, clean-up, etc
 +T22 - Make outstanding tests and integration tests
 +T23 - Styling of points table still a bit buggy - tbody should scroll
++T24 - Improve responsiveness of styling

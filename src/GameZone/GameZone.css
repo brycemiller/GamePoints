@@ -3,14 +3,11 @@
  */
 .gameZone {
     float: left;
-    /* GameZone should take up entire vertical space, but on an iPad
-       there is a padding 8px which is unavailable */
-    height: 97vh;
-    overflow: hidden;
-    width: 60%;
+    width: 100%;
 }
 
 .gameZone > header {
+    font-size: 35px;
     padding-left: 24px;
 }
 
@@ -23,4 +20,21 @@
 .gameZone > main {
     height: inherit;
     overflow-y: scroll;
+}
+
+@media screen and (min-width: 525px) {
+    /* Move game zone to right of scoreboard as space allows */
+    .gameZone {
+        /* Game zone should take up entire vertical space, but on an iPad
+           there is a padding 8px which is unavailable */
+        height: 97vh;
+        width: min-content;
+    }
+}
+
+@media screen and (min-width: 941px) {
+    /* Let game zone fill available space, proportionally */
+    .gameZone {
+        width: 60%;
+    }
 }

@@ -2,28 +2,18 @@
  * Styles for Scoreboard section.
  */
 .scoreboard {
-    /* Scoreboard should take up entire vertical space, but on an iPad
-       there is a padding 8px which is unavailable */
-    height: 97vh;
-    overflow: hidden;
+    display: block;
+    float: none;
     text-align: center;
 }
 
-.scoreboard > * {
-    border-bottom: 1px solid rgb(51, 51, 51);
-}
-
-.scoreboard > .header {
-    padding: 10px 0px;
-}
-
 .scoreboard > div.scoreboardItemList {
-    height: 505px;
+    height: 420px;
     overflow-y: scroll;
 }
 
 .scoreboard > div.scoreboardItemList > table {
-    border-spacing: 20px 15px;
+    border-spacing: 10px 5px;
     width: 100%;
 }
 
@@ -37,6 +27,10 @@
 
 .scoreboard > div.scoreboardItemList > table > tbody > tr > td {
     width: 33%;
+}
+
+.scoreboard > div.scoreboardItemList > table > tbody > tr > td.label {
+    padding-left: 20px;
 }
 
 .scoreboard > div.scoreboardItemList > table > tbody > tr.scoreboarditem > td.label > span {
@@ -61,7 +55,6 @@
 
 .scoreboard > .scoreboardBonusTotalizer {
     padding: 10px 0px;
-    text-align: left;
 }
 
 .scoreboard > .totalAndNewGameButton {
@@ -70,7 +63,12 @@
 }
 
 .scoreboard > .totalAndNewGameButton > .scoreboardTotal {
-    float: left;
+    float: none;
+    margin-bottom: 20px;
+}
+
+.scoreboard > .totalAndNewGameButton > .scoreboardTotal > div {
+    margin-left: 0;
 }
 
 .scoreboard > .totalAndNewGameButton > .newGameButton {
@@ -80,7 +78,72 @@
     margin-top: 0px;
 }
 
-.scoreboard > .scoreboardBonusTotalizer > span,
-.scoreboard > .totalAndNewGameButton > .scoreboardTotal > div {
-    margin-left: 26px;
+.scoreboard > .scoreboardBonusTotalizer > span {
+    display: block;
+}
+
+@media screen and (min-width: 525px) {
+    /* Move scoreboard to the right of gamezone as space allows */
+    .scoreboard {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 605px) {
+    /* Float scoreboard right and fix height so that it does not continue
+       to increase in size */
+    .scoreboard {
+        float: right;
+        /* Scoreboard should take up entire vertical space, but on an iPad
+           there is a padding 8px which is unavailable */
+        height: 97vh;
+    }
+}
+
+@media screen and (min-width: 645px) {
+    /* Increase scoreboard sizes when space allows */
+    .scoreboard > div.scoreboardItemList {
+        height: 505px;
+    }
+
+    .scoreboard > div.scoreboardItemList > table {
+        border-spacing: 20px 15px;
+    }
+
+    .scoreboard > div.scoreboardItemList > table > tbody > tr > td.label {
+        padding-left: 0;
+    }
+}
+
+@media screen and (min-width: 751px) {
+    /* When there is space for the bonus label and total on the
+       same line, put them on the same line */
+    .scoreboard > .scoreboardBonusTotalizer > span {
+        display: inline;
+        margin-left: 26px;
+    }
+}
+
+@media screen and (min-width: 941px) {
+    /* When space allows, let gamezone expand instead of scoreboard */
+    .scoreboard {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    /* When the new game button is on the same line as the total,
+       align total and bonus at left */
+    .scoreboard > .scoreboardBonusTotalizer {
+        text-align: left;
+    }
+
+    .scoreboard > .totalAndNewGameButton > .scoreboardTotal {
+        float: left;
+        margin-bottom: 0;
+    }
+
+    .scoreboard > .totalAndNewGameButton > .scoreboardTotal > div {
+        margin-left: 26px;
+    }
 }
